@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>代码测试</title>
+    <url>/2021/05/26/10-33-11/</url>
+    <content><![CDATA[<h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>我来试试代码怎么显示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reduce padding / margin indents on devices with narrow width.</span></span><br><span class="line"><span class="attr">mobile_layout_economy:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Android Chrome header panel color ($brand-bg / $headband-bg =&gt; $black-deep).</span></span><br><span class="line"><span class="attr">android_chrome_color:</span> <span class="string">&quot;#222&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Custom Logo (Do not support scheme Mist)</span></span><br><span class="line"><span class="attr">custom_logo:</span> <span class="comment">#/uploads/custom-logo.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">night</span> <span class="string">bright</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="string">ture</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="string">ture</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Shader <span class="string">&quot;Unity Shaders Book/Chapter 15/Dissolve&quot;</span> &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		<span class="comment">//控制消融程度。0正常显示，1完全消融</span></span><br><span class="line">		_BurnAmount (<span class="string">&quot;Burn Amount&quot;</span>, <span class="built_in">Range</span>(<span class="number">0.0</span>, <span class="number">1.0</span>)) = <span class="number">0.0</span></span><br><span class="line">		<span class="comment">//控制模拟烧焦效果时的线宽，值越大火焰边缘蔓延越广</span></span><br><span class="line">		_LineWidth(<span class="string">&quot;Burn Line Width&quot;</span>, <span class="built_in">Range</span>(<span class="number">0.0</span>, <span class="number">0.2</span>)) = <span class="number">0.1</span></span><br><span class="line">		<span class="comment">//漫反射纹理</span></span><br><span class="line">		_MainTex (<span class="string">&quot;Base (RGB)&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">		<span class="comment">//法线纹理</span></span><br><span class="line">		_BumpMap (<span class="string">&quot;Normal Map&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;bump&quot;</span> &#123;&#125;</span><br><span class="line">		<span class="comment">//火焰边缘的两种颜色值</span></span><br><span class="line">		_BurnFirstColor(<span class="string">&quot;Burn First Color&quot;</span>, Color) = (<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">		_BurnSecondColor(<span class="string">&quot;Burn Second Color&quot;</span>, Color) = (<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">		<span class="comment">//关键的噪声纹理</span></span><br><span class="line">		_BurnMap(<span class="string">&quot;Burn Map&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span>&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">		Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> <span class="string">&quot;Queue&quot;</span>=<span class="string">&quot;Geometry&quot;</span>&#125;</span><br><span class="line">		</span><br><span class="line">		Pass &#123;</span><br><span class="line">			<span class="comment">//为得到正确的光照，设置LightMode和编译指令</span></span><br><span class="line">			Tags &#123; <span class="string">&quot;LightMode&quot;</span>=<span class="string">&quot;ForwardBase&quot;</span> &#125;</span><br><span class="line">			<span class="comment">//渲染正面背面，消融会裸露模型内部构造</span></span><br><span class="line">			Cull Off</span><br><span class="line">			</span><br><span class="line">			CGPROGRAM</span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Lighting.cginc&quot;</span></span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;AutoLight.cginc&quot;</span></span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_fwdbase</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">			</span><br><span class="line">			fixed _BurnAmount;</span><br><span class="line">			fixed _LineWidth;</span><br><span class="line">			sampler2D _MainTex;</span><br><span class="line">			sampler2D _BumpMap;</span><br><span class="line">			fixed4 _BurnFirstColor;</span><br><span class="line">			fixed4 _BurnSecondColor;</span><br><span class="line">			sampler2D _BurnMap;</span><br><span class="line">			</span><br><span class="line">			float4 _MainTex_ST;</span><br><span class="line">			float4 _BumpMap_ST;</span><br><span class="line">			float4 _BurnMap_ST;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">a2v</span> &#123;</span></span><br><span class="line">				float4 vertex : POSITION;</span><br><span class="line">				float3 normal : NORMAL;</span><br><span class="line">				float4 tangent : TANGENT;</span><br><span class="line">				float4 texcoord : TEXCOORD0;</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">v2f</span> &#123;</span></span><br><span class="line">				float4 pos : SV_POSITION;</span><br><span class="line">				float2 uvMainTex : TEXCOORD0;</span><br><span class="line">				float2 uvBumpMap : TEXCOORD1;</span><br><span class="line">				float2 uvBurnMap : TEXCOORD2;</span><br><span class="line">				float3 lightDir : TEXCOORD3;</span><br><span class="line">				float3 worldPos : TEXCOORD4;</span><br><span class="line">				<span class="built_in">SHADOW_COORDS</span>(<span class="number">5</span>)</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="function">v2f <span class="title">vert</span><span class="params">(a2v v)</span> </span>&#123;</span><br><span class="line">				v2f o;</span><br><span class="line">				o.pos = <span class="built_in">UnityObjectToClipPos</span>(v.vertex);</span><br><span class="line">				<span class="comment">//使用宏计算纹理对应的纹理坐标</span></span><br><span class="line">				o.uvMainTex = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _MainTex);</span><br><span class="line">				o.uvBumpMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BumpMap);</span><br><span class="line">				o.uvBurnMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BurnMap);</span><br><span class="line">				</span><br><span class="line">				TANGENT_SPACE_ROTATION;</span><br><span class="line">				<span class="comment">//光源方向从模型空间变换到切线空间</span></span><br><span class="line">  				o.lightDir = <span class="built_in">mul</span>(rotation, <span class="built_in">ObjSpaceLightDir</span>(v.vertex)).xyz;</span><br><span class="line">  				</span><br><span class="line">  				o.worldPos = <span class="built_in">mul</span>(unity_ObjectToWorld, v.vertex).xyz;</span><br><span class="line">  				<span class="comment">//计算世界空间下的阴影纹理的采样坐标，给后面做透明度测试有正确阴影的Pass用</span></span><br><span class="line">  				<span class="built_in">TRANSFER_SHADOW</span>(o);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> o;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">fixed4 <span class="title">frag</span><span class="params">(v2f i)</span> : SV_Target &#123;</span></span><br><span class="line">				<span class="comment">//采样噪声纹理</span></span><br><span class="line">				fixed3 burn = <span class="built_in">tex2D</span>(_BurnMap, i.uvBurnMap).rgb;</span><br><span class="line">				<span class="comment">//&lt;0像素被剔除，通过正常光照计算</span></span><br><span class="line">				<span class="built_in">clip</span>(burn.r - _BurnAmount);</span><br><span class="line">				<span class="comment">//计算切线空间下的光照方向和法线</span></span><br><span class="line">				float3 tangentLightDir = <span class="built_in">normalize</span>(i.lightDir);</span><br><span class="line">				fixed3 tangentNormal = <span class="built_in">UnpackNormal</span>(<span class="built_in">tex2D</span>(_BumpMap, i.uvBumpMap));</span><br><span class="line">				<span class="comment">//材质反射率</span></span><br><span class="line">				fixed3 albedo = <span class="built_in">tex2D</span>(_MainTex, i.uvMainTex).rgb;</span><br><span class="line">				<span class="comment">//环境</span></span><br><span class="line">				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;</span><br><span class="line">				<span class="comment">//漫反射</span></span><br><span class="line">				fixed3 diffuse = _LightColor0.rgb * albedo * <span class="built_in">max</span>(<span class="number">0</span>, <span class="built_in">dot</span>(tangentNormal, tangentLightDir));</span><br><span class="line">				<span class="comment">//模拟烧焦颜色变化，t=1像素位于消融边界，t=0像素为正常模型颜色，否则在两个参数之间插值</span></span><br><span class="line">				fixed t = <span class="number">1</span> - <span class="built_in">smoothstep</span>(<span class="number">0.0</span>, _LineWidth, burn.r - _BurnAmount);</span><br><span class="line">				fixed3 burnColor = <span class="built_in">lerp</span>(_BurnFirstColor, _BurnSecondColor, t);</span><br><span class="line">				<span class="comment">//加强烧焦效果</span></span><br><span class="line">				burnColor = <span class="built_in">pow</span>(burnColor, <span class="number">5</span>);</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">UNITY_LIGHT_ATTENUATION</span>(atten, i, i.worldPos);</span><br><span class="line">				fixed3 finalColor = <span class="built_in">lerp</span>(ambient + diffuse * atten, burnColor, t * <span class="built_in">step</span>(<span class="number">0.0001</span>, _BurnAmount));</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">fixed4</span>(finalColor, <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			ENDCG</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Pass to render object as a shadow caster</span></span><br><span class="line">		Pass &#123;</span><br><span class="line">			<span class="comment">//设置投射阴影的LightMod和编译指令</span></span><br><span class="line">			Tags &#123; <span class="string">&quot;LightMode&quot;</span> = <span class="string">&quot;ShadowCaster&quot;</span> &#125;</span><br><span class="line">			</span><br><span class="line">			CGPROGRAM</span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_shadowcaster</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;UnityCG.cginc&quot;</span></span></span><br><span class="line">			</span><br><span class="line">			fixed _BurnAmount;</span><br><span class="line">			sampler2D _BurnMap;</span><br><span class="line">			float4 _BurnMap_ST;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">v2f</span> &#123;</span></span><br><span class="line">				<span class="comment">//内置宏帮助计算阴影投射时需要的各种变量</span></span><br><span class="line">				V2F_SHADOW_CASTER;</span><br><span class="line">				float2 uvBurnMap : TEXCOORD1;</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="function">v2f <span class="title">vert</span><span class="params">(appdata_base v)</span> </span>&#123;</span><br><span class="line">				v2f o;</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">TRANSFER_SHADOW_CASTER_NORMALOFFSET</span>(o)</span><br><span class="line">				</span><br><span class="line">				o.uvBurnMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BurnMap);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> o;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">fixed4 <span class="title">frag</span><span class="params">(v2f i)</span> : SV_Target &#123;</span></span><br><span class="line">				fixed3 burn = <span class="built_in">tex2D</span>(_BurnMap, i.uvBurnMap).rgb;</span><br><span class="line">				<span class="comment">//剔除片元</span></span><br><span class="line">				<span class="built_in">clip</span>(burn.r - _BurnAmount);</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">SHADOW_CASTER_FRAGMENT</span>(i)</span><br><span class="line">			&#125;</span><br><span class="line">			ENDCG</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	FallBack <span class="string">&quot;Diffuse&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看系统的path环境变量</span></span><br><span class="line"><span class="comment"># 1`导入模块sys</span></span><br><span class="line"><span class="comment"># 2`sys.path 可以查看到环境变量的具体内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> sys.path:</span><br><span class="line">    <span class="built_in">print</span>(p)</span><br><span class="line"><span class="comment"># 把指定的路径加入环境变量中</span></span><br><span class="line"><span class="comment"># 追加到末尾</span></span><br><span class="line"><span class="comment"># sys.path.append(&quot;/home/zyu0/Desktop/test&quot;)</span></span><br><span class="line"><span class="comment">#　追加到开头</span></span><br><span class="line">sys.path.insert(<span class="number">0</span>,<span class="string">&quot;/home/zyu0/Desktop/test&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;--&quot;</span>*<span class="number">20</span>)</span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> sys.path:</span><br><span class="line">    <span class="built_in">print</span>(p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> app</span><br><span class="line"><span class="built_in">print</span>(app.name)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>zzz</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>重要通知</title>
+    <url>/2021/05/26/10-33-11/</url>
+    <content><![CDATA[<h1 id="网站重构中"><a href="#网站重构中" class="headerlink" title="网站重构中"></a>网站重构中</h1><p>原网页基于wordpress，对markdown文档支持不友好，目前在使用Hexo和github action重构博客系统，敬请期待！</p>
+<p>原网站主要内容为作品集，目前主要是两个视频链接，在此留下Bilibili链接：</p>
+<p><a href="https://space.bilibili.com/34894815/channel/detail?cid=178152&amp;ctype=0">https://space.bilibili.com/34894815/channel/detail?cid=178152&amp;ctype=0</a></p>
+<p>技术文章等待上传</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/05/29/00-38-53/</url>
+    <content><![CDATA[<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="变量的基本使用"><a href="#变量的基本使用" class="headerlink" title="变量的基本使用"></a>变量的基本使用</h2><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ol>
+<li>第一次被赋值后创建并定义变量</li>
+<li>交互式查看变量不需要print</li>
+<li>可以用其他变量的计算结果来定义变量<ul>
+<li>两个数字型变量可以直接进行算数运算</li>
+</ul>
+</li>
+<li>变量重新赋值不会被重新定义</li>
+<li>python中定义变量时不需要指定变量的类型<ul>
+<li>解释器会根据赋值语句等号右侧的数据自动推导变量中保存数据的准确类型</li>
+</ul>
+</li>
+</ol>
+<h2 id="Notes-程序-C语言-数据类型"><a href="#Notes-程序-C语言-数据类型" class="headerlink" title="Notes/程序/C语言/数据类型"></a><a href="Notes/%E7%A8%8B%E5%BA%8F/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md">Notes/程序/C语言/数据类型</a></h2><h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><ul>
+<li><p>用代码获取用户通过键盘输入的信息</p>
+</li>
+<li><p>input函数</p>
+</li>
+<li><p>字符串变量 = input(“提示信息：”)</p>
+<ul>
+<li>输入的内容都是字符串类型</li>
+</ul>
+</li>
+<li><p>改进变量数量，使用函数嵌套，减少变量使用，节省内存</p>
+<ul>
+<li>price = float(input(x))</li>
+</ul>
+</li>
+</ul>
+<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p><strong>在输出文字信息的同时一起输出数据，需要用到格式化操作符</strong></p>
+<ul>
+<li>%</li>
+<li>包含%的字符串为格式化字符串</li>
+</ul>
+<p><strong>不同类型数据需要不同的格式化字符串</strong></p>
+<ul>
+<li>%06d在6位以内以0占位，超出6位输出原值</li>
+</ul>
+<p><strong>格式</strong></p>
+<ul>
+<li><p>例：print(“我的名字叫 %s，请多多关照” % name)</p>
+<ul>
+<li>前面加了占位符，后面要跟上指定变量名</li>
+</ul>
+</li>
+</ul>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>变量和数据都保存在内存中，函数的参数传递以及返回值都是靠引用传递的</li>
+<li>id（）函数查看变量保存的内存地址<img src="/.xyz//53feedcc848120e0e6fba5436a55a359af122c2014c2f85f67e3e8f161c0f80a.png"></li>
+</ul>
+<h3 id="阐释"><a href="#阐释" class="headerlink" title="阐释"></a>阐释</h3><ul>
+<li><p>a=1;b=a &gt; a=2;b=1 &gt; a=2;b=a<img src="/.xyz//77c2db56306eaecd25f31dda1820138c5384a370a105ab4ce6932b3788469815.png"></p>
+<ul>
+<li><p><img src="/.xyz//c40b287e5442b9317eb42c9524b7c86553395080e67e830d79dab7da52cacf2b.png"></p>
+</li>
+<li><p><img src="/.xyz//c1f25c43a7b9594bd37cec5c7f9c6906e73685b697c55a36a9b724a37c2242b0.png"></p>
+</li>
+<li><p><img src="/.xyz//c028bd5633154b066d2fcd7f045392c4a3354aecab8171af4a60871d73e6d2eb.png"></p>
+</li>
+</ul>
+</li>
+<li><p>给变量赋值 本质为 修改对数据的引用</p>
+</li>
+</ul>
+<h2 id="可变和不可变类型"><a href="#可变和不可变类型" class="headerlink" title="[[可变和不可变类型]]"></a>[[可变和不可变类型]]</h2><h2 id="哈希-hash"><a href="#哈希-hash" class="headerlink" title="[[哈希(hash)]]"></a>[[哈希(hash)]]</h2><h2 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="[[局部变量和全局变量]]"></a>[[局部变量和全局变量]]</h2><h2 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h2><h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><ul>
+<li><p>程序员定义的变量名、函数名</p>
+</li>
+<li><p>规则</p>
+<ul>
+<li><p>要见名知义</p>
+</li>
+<li><p>只能由字母、下划线和数字组成</p>
+</li>
+<li><p>不能以数字开头</p>
+</li>
+<li><p>不能与关键字重名</p>
+</li>
+<li><p>区分大小写</p>
+</li>
+<li><p>变量名需要由两个或多个单词组成时</p>
+<ul>
+<li><p>法1</p>
+<ul>
+<li>每个单词都字母小写</li>
+<li>单词间用 _ 下划线连接</li>
+</ul>
+</li>
+<li><p>法2</p>
+<ul>
+<li><p>小驼峰命名法</p>
+<ul>
+<li>firstName</li>
+</ul>
+</li>
+<li><p>大驼峰命名法</p>
+<ul>
+<li>FirstName</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>定义时 = 左右各保留一个空格</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ul>
+<li><p>python内部已经使用的标识符</p>
+<ul>
+<li>开发者不允许使用定义和关键字相同的名字和标识符</li>
+</ul>
+</li>
+<li><p>import</p>
+<ul>
+<li><p>导入工具包/模块</p>
+<ul>
+<li>语句要放在文件顶部，方便下面的代码使用其工具</li>
+</ul>
+</li>
+<li><p>random</p>
+<ul>
+<li><img src="/.xyz//e400ddc06f027a5f5b23146b7172d1d2d393e312511f5cd94767ac3ca46bb79f.png"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/05/29/00-38-53/</url>
+    <content><![CDATA[<h2 id="可变"><a href="#可变" class="headerlink" title="可变"></a>可变</h2><ul>
+<li><p>列表</p>
+</li>
+<li><p>字典</p>
+<ul>
+<li>其key只能使用不可变类型数据</li>
+</ul>
+</li>
+<li><p>可变类型的数据变化是通过方法来实现的，若对可变类型变量赋值新数据，引用会被覆盖</p>
+</li>
+</ul>
+<h2 id="不可变"><a href="#不可变" class="headerlink" title="不可变"></a>不可变</h2><ul>
+<li>数字类型</li>
+<li>字符串</li>
+<li>元组</li>
+</ul>
+<p>可变与不可变</p>
+<p>可变不可变，是指内存中的那块内容（value)是否可以被改变</p>
+<ul>
+<li>可变类型（mutable)，创建后可以继续修改对象的内容（值）</li>
+</ul>
+<blockquote>
+<p>字典、列表</p>
+</blockquote>
+<ul>
+<li>不可变类型（unmutable)，一旦创建就不可修改的对象（值)</li>
+</ul>
+<blockquote>
+<p>数字，字符串，元组</p>
+</blockquote>
+<p>可变：变量创建后，内存内容可以再改变<br>不可变，变量创建 内存空间一旦被分配，就不能在改变</p>
+<p><img src="/.xyz//zyu0-2020-11-09_16-34-56.png" alt="zyu0-2020-11-09_16-34-56"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">可变：变量创建后，内存内容可以再改变</span></span><br><span class="line"><span class="string">不可变，变量创建 内存空间一旦被分配，就不能在改变</span></span><br><span class="line"><span class="string">a是变量，保存数字，不可变</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>():</span></span><br><span class="line">    a=<span class="number">5</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a =&quot;</span>,a, <span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 修改变量</span></span><br><span class="line">    a = <span class="number">5</span>+<span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a =&quot;</span>,a, <span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list1 = &quot;</span>, list1,<span class="built_in">id</span>(list1))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 给列表增加新的元素</span></span><br><span class="line">list1.append(<span class="number">7</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list1 = &quot;</span>, list1,<span class="built_in">id</span>(list1))</span><br><span class="line"></span><br><span class="line">list2 = list1</span><br><span class="line">list2.append(<span class="number">9</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list2 = &quot;</span>, list2,<span class="built_in">id</span>(list2))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.xyz//image-20201109163728754.png" alt="image-20201109163728754"></p>
+<h2 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h2><p>浅拷贝，浅复制</p>
+<p>深拷贝，深复制</p>
+<p><img src="/.xyz//image-20201109164122575.png" alt="image-20201109164122575"></p>
+<p>作用</p>
+<p>1、减少内存的使用</p>
+<p>2、以后在做数据的清洗、修改或者入库的时候上对原数据进行复制一份，以防数据修改之后，找不到原数据。</p>
+<h3 id="可变拷贝"><a href="#可变拷贝" class="headerlink" title="可变拷贝"></a>可变拷贝</h3><p>简单可变类型，浅拷贝、深拷贝都会产生一个新的空间，能够保持数据的独立性</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">可变：变重创建完成后，内存习以改变</span></span><br><span class="line"><span class="string">列表和字典</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list1 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list1 = &quot;</span>, list1,<span class="built_in">id</span>(list1))</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># list3 = list1</span></span><br><span class="line"><span class="comment"># list3.append(7)</span></span><br><span class="line"><span class="comment"># print(&quot;list3 = &quot;, list3,id(list3))</span></span><br><span class="line"><span class="comment"># 拷贝：</span></span><br><span class="line"><span class="comment"># 1、导入模块copy</span></span><br><span class="line"><span class="comment"># 2、调用方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#     copy重变量）产生副本，浅拷贝</span></span><br><span class="line">list2 = copy.copy(list1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list2 = &quot;</span>,list2,<span class="built_in">id</span>(list2))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改list1</span></span><br><span class="line">list1.append(<span class="number">7</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list1 = &quot;</span>, list1,<span class="built_in">id</span>(list1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list2=&quot;</span>,list2,<span class="built_in">id</span>(list2))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># deepcopy(变量）产生副本，深拷贝</span></span><br><span class="line">list1 = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list1 = &quot;</span>, list1, <span class="built_in">id</span>(list1))</span><br><span class="line"></span><br><span class="line">list2 = copy.deepcopy(list1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list2=&quot;</span>,list2,<span class="built_in">id</span>(list2))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改ｌｉｓｔ２</span></span><br><span class="line">list2.append(<span class="number">7</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;list2=&quot;</span>,list2,<span class="built_in">id</span>(list2))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 总结：　简单可变类型的深浅拷贝，会产生新的空间，保证数据的独立性</span></span><br></pre></td></tr></table></figure>
+
+<p>复杂可变类型浅拷贝</p>
+<p><img src="/.xyz//image-20201109170740834.png" alt="image-20201109170740834"></p>
+<p>复杂可变类型深拷贝</p>
+<p><img src="/.xyz//image-20201109171508297.png" alt="image-20201109171508297"></p>
+<h3 id="不可变拷贝"><a href="#不可变拷贝" class="headerlink" title="不可变拷贝"></a>不可变拷贝</h3><p>对简单不可变类型不管深浅拷贝，都不会改变地址</p>
+<p><img src="/.xyz//image-20201109172700367.png" alt="image-20201109172700367"></p>
+<p>对复杂不可变类型浅拷贝，都不会改变地址，深拷贝，会新建空间</p>
+<blockquote>
+<p> 这个数据是否有可变的数据类型，如果有，他就会开辟多个空间存储数据和地址，能够保持数据独止性</p>
+</blockquote>
+<p><img src="/.xyz//image-20201109174017839.png" alt="image-20201109174017839"></p>
+<p>==应该就是当复制对象可变时，为保证数据稳定独立，所以会重新开辟一个新空间来存储，而不可变对象因为其稳定不可变，所以直接复制其内存地址，而不再开辟新空间来容纳==</p>
+<p><strong>只要开辟新空间则算做深拷贝，就算是浅拷贝，在底层也可看作深拷贝</strong></p>
+<h3 id="切片拷贝"><a href="#切片拷贝" class="headerlink" title="切片拷贝"></a>切片拷贝</h3><p>变量名[:]</p>
+<blockquote>
+<p>切片拷贝，是一种浅拷贝，副本对象和原对象指向同一个空间</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Ａ=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">B=[<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>]</span><br><span class="line"></span><br><span class="line">C =(A,B)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;C = &quot;</span>,C,<span class="built_in">id</span>(C))</span><br><span class="line">D = C[:]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;D = &quot;</span>,D,<span class="built_in">id</span>(D))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.xyz//image-20201109183653796.png" alt="image-20201109183653796"></p>
+<h3 id="字典拷贝"><a href="#字典拷贝" class="headerlink" title="字典拷贝"></a>字典拷贝</h3><p>字典本身自带 .copy方法</p>
+<p>浅拷贝</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">dict1 = &#123;<span class="string">&quot;age&quot;</span>:[<span class="number">1</span>,<span class="number">2</span>]&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;dict1 = &quot;</span>, dict1,<span class="built_in">id</span>(dict1))</span><br><span class="line"></span><br><span class="line">dict2 = dict1.copy()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;dict2 = &quot;</span>, dict2,<span class="built_in">id</span>(dict2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;--&quot;</span>*<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">dict1[<span class="string">&quot;age&quot;</span>][<span class="number">0</span>] = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;dict1 = &quot;</span>, dict1,<span class="built_in">id</span>(dict1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;dict2 = &quot;</span>, dict2,<span class="built_in">id</span>(dict2))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.xyz//image-20201109184926815.png" alt="image-20201109184926815">深拷贝和浅拷贝</p>
+<ol>
+<li>拷贝简单可变的数据类型的时候 a=[]</li>
+</ol>
+<blockquote>
+<p>深拷贝和浅拷贝是一样的，都会开辟新的空间存储数据，可以保证数据的独立性</p>
+</blockquote>
+<ol start="2">
+<li>拷贝有嵌套的复杂的数据类型a=[[]，[]]</li>
+</ol>
+<blockquote>
+<p> 浅拷贝开辟一片空间存放拷贝对象的地址没办法保证数据的独立性</p>
+</blockquote>
+<blockquote>
+<p>深拷贝开辟多片空间存放拷贝对象的具体数据和地址保证数据的独立性</p>
+</blockquote>
+<p>3，拷贝不可变的数据类型（）</p>
+<blockquote>
+<p>深拷贝和浅拷贝都一样都不会开辟新的空间，而是直接引用了被拷贝的数据的地址</p>
+</blockquote>
+<p>4，拷贝不可变的数据类型中嵌套了可变数据类型</p>
+<blockquote>
+<p>浅拷贝：只关心最外的数据类型是什么，如果是不可变的数据类型直接引用，没有办法保证数据的独立性</p>
+</blockquote>
+<blockquote>
+<p>深拷贝：这个数据是否有可变的数据类型，如果有它就会开辟多个空间存储数据和地址，达到保证数据独立性的作用</p>
+</blockquote>
+<p>5，切片拷贝，字典拷贝</p>
+<blockquote>
+<p>在python中多数情况下都是浅拷贝</p>
+</blockquote>
+<p>单置下划线，防止  from 模块 import*  这种方式导入我们不想让他导入变量私有属性，不能真正的保证数据的安全性可以被外部直接访问，实例对象 .__类名__私有属性名字</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/05/29/00-38-53/</url>
+    <content><![CDATA[<p>python内置的 hash（0）函数</p>
+<ul>
+<li>接收一个不可变类型的数据作为参数</li>
+<li>返回结果是一个整数</li>
+</ul>
+<p>一种算法，提取数据的特征码</p>
+<ul>
+<li>相同的内容得到相同的结果</li>
+<li>不同的内容得到不同的结果</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/05/29/00-38-53/</url>
+    <content><![CDATA[<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><ul>
+<li>是在函数内部定义的变量，只能在函数内部使用</li>
+<li>不同的函数，可以定义同名的变量，不影响<img src="/.xyz//8700adfb38a70b7ebd92f24bdcf0ead7dd04888c86031aff45d00e6ec9298266.png"></li>
+</ul>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>是在函数外部定义的变量（没有定义在某一个函数内），所有函数内部都可以使用这个变量<br>在python中，不允许直接修改全局变量的值</p>
+<p>如果使用赋值语句，会在函数内部，定义一个局部变量</p>
+<ul>
+<li><p>防止全局变量变化，导致维护困难</p>
+</li>
+<li><p>global 变量名</p>
+<ul>
+<li>如果在函数中需要修改全局变量，需要使用global进行声明</li>
+<li>global 关键字会告诉解释器后面的变量是一个全局变量，再使用赋值语句时，就不会创建局部变量</li>
+</ul>
+</li>
+<li><p>许多公司会指定全局变量前加 g_ 或 gl_</p>
+</li>
+</ul>
+<p>==python执行时会先查看函数内部局部变量，再查看全局变量==</p>
+<p>变量作用域？</p>
+<p>在一个域中的变量会影响外部域进来的变量，除非外部域变量在使用前已被修改，否则会报错</p>
+<p><img src="/.xyz//Users/zyu/Desktop/zyu0-2020-11-08_20-58-25.png" alt="zyu0-2020-11-08_20-58-25"></p>
+<p> 造成错误的原因：</p>
+<ul>
+<li>编译器认为内层函数已经定义了num变量优先使用内层</li>
+<li>如果在内层定义了和外层同名的变量，而且需要使用外层的变量</li>
+<li>nonlocal 不适用内层函数的变量，而是使用外层函数的变量</li>
+</ul>
+]]></content>
+  </entry>
+</search>
