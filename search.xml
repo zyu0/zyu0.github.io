@@ -324,8 +324,7 @@ print(line)</p>
   <entry>
     <title>PicGo探索</title>
     <url>/post/38f64154/</url>
-    <content><![CDATA[<html><head></head><body><h1>PicGo探索</h1>
-<h2 id="上传后删除测试">上传后删除测试</h2>
+    <content><![CDATA[<html><head></head><body><h2 id="上传后删除测试">上传后删除测试</h2>
 <p>可证明的是当图片上传至github后，即使在github中删除，这里的url同样有效，原因还未知</p>
 <p>如以下这两张图片，搜索链接还能找到</p>
 <figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">![<span class="string">empty_gallery</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg</span>)</span><br></pre></td></tr></tbody></table></figure>
