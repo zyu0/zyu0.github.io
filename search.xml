@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Front-matter写法注意点</title>
-    <url>/post/103d05/</url>
-    <content><![CDATA[<html><head></head><body><p>每个单词后冒号必须是英文，且冒号后必须有一个空格</p>
-</body></html>]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>test</title>
     <url>/post/dc4c1419/</url>
     <content><![CDATA[<html><head></head><body><h1>xxx</h1>
@@ -149,6 +137,18 @@ print(line)</p>
 <p>sql中需要变化的地方，可以占位符%s %d…</p>
 <p>把参数封装到列表中</p>
 <p>把列表传递给 execute(sql，列表）</p>
+</body></html>]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Front-matter写法注意点</title>
+    <url>/post/103d05/</url>
+    <content><![CDATA[<html><head></head><body><p>每个单词后冒号必须是英文，且冒号后必须有一个空格</p>
 </body></html>]]></content>
       <categories>
         <category>code</category>
