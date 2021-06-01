@@ -310,39 +310,6 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       </tags>
   </entry>
   <entry>
-    <title>PicGo探索</title>
-    <url>/post/38f64154/</url>
-    <content><![CDATA[<html><head></head><body><h1>PicGo探索</h1>
-<h2 id="上传后删除测试">上传后删除测试</h2>
-<p>可证明的是当图片上传至github后，即使在github中删除，这里的url同样有效，原因还未知</p>
-<p>如以下这两张图片，搜索链接还能找到</p>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">![<span class="string">empty_gallery</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg" alt="empty_gallery"></p>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">![<span class="string">hayward-gallery-50th-anniversary-03</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg" alt="hayward-gallery-50th-anniversary-03"></p>
-<h2 id="同名上传测试">同名上传测试</h2>
-<p>当上传至一个文件夹下时PicGo会报错，上传失败</p>
-<ul>
-<li>希望以后能覆盖上传</li>
-</ul>
-<p>切换上传文件夹后可行，如以下两张图片</p>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
-<p>经测试，我更喜欢按写文章的日期切换上传文件夹，这样在github中整理的更清晰，文件PicGo提供了时间戳重命名功能，但我觉得那个看着实在不明确，当图片有问题去github查找太难了，保留图片名字的差异化最好。虽然PicGo也提供了上传前手动重命名的选项，但太麻烦，不够优雅</p>
-<blockquote>
-<p>上面方式也有一个问题，就是图片在github查找时排序不是按上传时间排列的，而是按名字排序，会导致从时间顺序查找不方便，方法还需要斟酌。</p>
-</blockquote>
-</body></html>]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Test2</title>
     <url>/post/d87f7e0c/</url>
     <content><![CDATA[<html><head></head><body><h2 id="引用站内其他文章">引用站内其他文章</h2>
