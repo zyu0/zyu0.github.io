@@ -310,14 +310,9 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/post/0/</url>
-    <content><![CDATA[<html><head></head><body><hr>
-<h2 id="title：PicGo探索categories：codetags：笔记abbrlink：">title：PicGo探索<br>
-categories：code<br>
-tags：笔记<br>
-abbrlink：</h2>
-<h1>PicGo探索</h1>
+    <title>PicGo探索</title>
+    <url>/post/38f64154/</url>
+    <content><![CDATA[<html><head></head><body><h1>PicGo探索</h1>
 <h2 id="上传后删除测试">上传后删除测试</h2>
 <p>可证明的是当图片上传至github后，即使在github中删除，这里的url同样有效，原因还未知</p>
 <p>如以下这两张图片，搜索链接还能找到</p>
@@ -340,6 +335,12 @@ abbrlink：</h2>
 <p>上面方式也有一个问题，就是图片在github查找时排序不是按上传时间排列的，而是按名字排序，会导致从时间顺序查找不方便，方法还需要斟酌。</p>
 </blockquote>
 </body></html>]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
   </entry>
   <entry>
     <title>Test2</title>
