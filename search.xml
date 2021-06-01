@@ -310,11 +310,10 @@ print(line)</p>
       </tags>
   </entry>
   <entry>
-    <title>test</title>
+    <title>Test2</title>
     <url>/post/d87f7e0c/</url>
-    <content><![CDATA[<html><head></head><body><h1>xxx</h1>
-<p>asjfhafolihWAOEGFHWOIGHWEOIGHQWOGHOUQGHOUIWERHGOQWEHGEORGHEOERJG</p>
-<p>FWLKEHFQWIGHPGJQOEJRGPO;QJRGQE;HGJERH</p>
+    <content><![CDATA[<html><head></head><body><h2 id="引用站内其他文章">引用站内其他文章</h2>
+<a href="/post/dc4c1419/" title="test">test</a>
 </body></html>]]></content>
   </entry>
   <entry>
