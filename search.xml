@@ -90,36 +90,6 @@ print(line)</p>
       </tags>
   </entry>
   <entry>
-    <title>hexo-auto-category插件问题</title>
-    <url>/post/c8b7dc96/</url>
-    <content><![CDATA[<h2 id="2021-6-2存在问题">2021.6.2存在问题</h2>
-<p>在6月2号的四天前刚刚修复了<code>err: TypeError: tmpPost.categories.join is not a function </code>的问题</p>
-<p>具体原因是在front matter时，categories需要特定的格式，如下，不能写成<code>categories: 空页面</code></p>
-<ul>
-<li>单层级文件夹如下</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
-<ul>
-<li>多层级文件夹如下</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
-<h3 id="多重分类失效">多重分类失效</h3>
-<p>手动分类测试：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> [空页面]</span><br><span class="line"><span class="bullet">  -</span> [code]</span><br></pre></td></tr></table></figure>
-<p>插件会自动替换原来手动写好的分类，按文件夹层级重写</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
-<p>网站界面一直保持如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210602192639352.png" alt="image-20210602192639352"></p>
-<p>对于想要多重分类标记的文章，建议使用标签，标签格式相同，但不存在这个层级问题，具体可查看<a href="https://hexo.io/zh-cn/docs/front-matter">Hexo文档</a></p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo插件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网站配置注意点</title>
     <url>/post/28f332e5/</url>
     <content><![CDATA[<h2 id="Front-matter写法">Front-matter写法</h2>
@@ -356,6 +326,36 @@ print(line)</p>
     <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
 <a href="/post/dc4c1419/" title="test">test</a>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hexo-auto-category插件问题</title>
+    <url>/post/c8b7dc96/</url>
+    <content><![CDATA[<h2 id="2021-6-2存在问题">2021.6.2存在问题</h2>
+<p>在6月2号的四天前刚刚修复了<code>err: TypeError: tmpPost.categories.join is not a function </code>的问题</p>
+<p>具体原因是在front matter时，categories需要特定的格式，如下，不能写成<code>categories: 空页面</code></p>
+<ul>
+<li>单层级文件夹如下</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
+<ul>
+<li>多层级文件夹如下</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
+<h3 id="多重分类失效">多重分类失效</h3>
+<p>手动分类测试：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> [空页面]</span><br><span class="line"><span class="bullet">  -</span> [code]</span><br></pre></td></tr></table></figure>
+<p>插件会自动替换原来手动写好的分类，按文件夹层级重写</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
+<p>网站界面一直保持如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210602192639352.png" alt="image-20210602192639352"></p>
+<p>对于想要多重分类标记的文章，建议使用标签，标签格式相同，但不存在这个层级问题，具体可查看<a href="https://hexo.io/zh-cn/docs/front-matter">Hexo文档</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo插件</tag>
+      </tags>
   </entry>
   <entry>
     <title>npm图床设置和问题</title>
