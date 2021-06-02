@@ -1,6 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据库编程</title>
+    <url>/post/8c5e4b35/</url>
+    <content><![CDATA[<h1>数据库编程</h1>
+<p>从前面我们知道数据库概念包含数据库文件、服务器和数据库客户端客户端我们之前已经用过的有navicat/mysql-client等程序。</p>
+<p>大家会发现如果用之前客户端几乎是不可能完全这个任务的，因为我们不可能去构造出那个插入10w行数据的SQL·可是，如果我们有一个功能能够插入一行数据，借助程序强大的特点-重复，就可以轻而易举的就将10w行数据收入磨下。这种通过使用程序代码的方式去连接数据库服务器，==通过和服务器进行交互完成对数据库的增删改查的方式，就称为数据库编程。==<br>
+而此刻学习的pymysql就是一种客户端。</p>
+<p>使用python代码充当客户端，连接数据库进行操作</p>
+<p>步骤：</p>
+<ul>
+<li>导入模块 pymysql</li>
+<li>建立连接对象 pymysql.connect()</li>
+<li>创建游标对象</li>
+<li>使用游标对象执行SQL语句</li>
+</ul>
+<blockquote>
+<p>cur.execute(&quot;sql语句”）</p>
+<p>execute()有返回值</p>
+<p>1)增删改，影响的行数</p>
+<p>2)查询，总记录数</p>
+</blockquote>
+<ul>
+<li>获取执行的结果</li>
+</ul>
+<blockquote>
+<p>1）取1条cur.fetchone（）#元组</p>
+<p>2）取所有cur.fetchall（）#（(），(），(））</p>
+</blockquote>
+<ul>
+<li>打印输出获取的内容</li>
+</ul>
+<blockquote>
+<p>for line in result_list:<br>
+print(line)</p>
+</blockquote>
+<ul>
+<li>关闭游标对象</li>
+</ul>
+<blockquote>
+<p>cur.close()</p>
+</blockquote>
+<ul>
+<li>关闭连接对象</li>
+</ul>
+<blockquote>
+<p>conn.close()</p>
+</blockquote>
+<p><img src="assets/zyu0-2020-11-07_13-34-18-1604727271305.png" alt="zyu0-2020-11-07_13-34-18"></p>
+<p><img src="assets/zyu0-2020-11-07_13-36-52.png" alt="zyu0-2020-11-07_13-36-52"></p>
+<p><img src="assets/zyu0-2020-11-07_13-43-51.png" alt="zyu0-2020-11-07_13-43-51"></p>
+<p><img src="assets/zyu0-2020-11-07_13-43-13.png" alt="zyu0-2020-11-07_13-43-13"></p>
+<h2 id="Python操作数据库CURD">Python操作数据库CURD</h2>
+<p>操作步骤：</p>
+<ul>
+<li>导入模块</li>
+<li>创建连接对象</li>
+<li>创建游标对象。</li>
+<li>使用游标对象执行SQL</li>
+</ul>
+<blockquote>
+<p>execute()</p>
+</blockquote>
+<ul>
+<li>提交</li>
+</ul>
+<blockquote>
+<p>conn.commit()</p>
+</blockquote>
+<ul>
+<li>获取执行的结果（影响的行数）并打印执行的结果</li>
+<li>关闭游标</li>
+<li>关闭连接</li>
+</ul>
+<h1>SQL防注入</h1>
+<p>什么是SOL注入</p>
+<p>产生原因：后台用户提交的带有恶意的数据和SQL进行字符串方式的拼接，从而影响了SQL语句的语义，最终产生数据泄露的现象·如果防止：sql语句的参数化，将SQL语句的所有数据参数存在一个列表中传递给execute函数的二个参数</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">input_name <span class="operator">=</span> input(&quot;请输入要查询的名称:\n&quot;)</span><br><span class="line"># <span class="number">4</span>、使用游标对象执行<span class="keyword">SQL</span>语句</span><br><span class="line"># 被注入过程分析</span><br><span class="line"># input_name <span class="operator">=</span> <span class="string">&#x27; or 1 or &#x27;</span></span><br><span class="line"># &quot;select * from goods where name = &#x27;%s&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># 防止注入：</span><br><span class="line"># <span class="number">1</span>)　构建参数列表params <span class="operator">=</span> input_name</span><br><span class="line"># <span class="number">2</span>) 把列表传递给 excute(<span class="keyword">sql</span>, params)</span><br><span class="line">params <span class="operator">=</span> [input_name]</span><br><span class="line"><span class="keyword">sql</span> <span class="operator">=</span> &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot;  # 这里不知为何参数可以自行替代</span><br><span class="line"># cur.execute(<span class="keyword">SQL</span>语句)　返回值是影响的行数，如果是查询语句，此处返回总记录数</span><br><span class="line"><span class="keyword">result</span> <span class="operator">=</span> cur.execute(<span class="keyword">sql</span>)</span><br><span class="line">print(&quot;查询到%s&quot; <span class="operator">%</span> <span class="keyword">result</span>)</span><br><span class="line"># <span class="number">5</span>、获取执行的结果</span><br><span class="line"># cur.fetchone()从查询结果中取出一条数据。数据库默认升序，此函数会取出第一条数据</span><br><span class="line"># result_list <span class="operator">=</span> cur.fetchone()</span><br><span class="line">result_list <span class="operator">=</span> cur.fetchall()</span><br><span class="line"></span><br><span class="line"># <span class="number">6</span>、打印输出获取的内容</span><br><span class="line"># print(result_list)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> result_list:</span><br><span class="line">    # line即一行数据，是一个元组</span><br><span class="line">    print(line)</span><br><span class="line"></span><br><span class="line"># <span class="number">7</span>、关闭游标对象</span><br><span class="line">cur.close()</span><br><span class="line"># <span class="number">8</span>、关闭连接对象</span><br><span class="line">conn.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>防注入的思路：</p>
+<p>sql中需要变化的地方，可以占位符%s %d…</p>
+<p>把参数封装到列表中</p>
+<p>把列表传递给 execute(sql，列表）</p>
+]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网站配置注意点</title>
+    <url>/post/28f332e5/</url>
+    <content><![CDATA[<h2 id="Front-matter写法">Front-matter写法</h2>
+<p>每个单词后冒号必须是英文，且冒号后必须有一个空格</p>
+<h2 id="PWA和网站提示更新">PWA和网站提示更新</h2>
+<p>pwa的实质其实是惰性加载。你看到的提示更新是为了应对这种惰性加载的手段，通过监测站点内容是否变动，弹窗提示你更新</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>配置PWA后布署失败的解决方式</title>
+    <url>/post/b6596b48/</url>
+    <content><![CDATA[<p>在配置 好PWA最后布署页面的时候，如果已经 hexo s 生成本地页面的话，会在<code>.git/hooks</code> 目录下生成一个 <code>pre-commit</code> 文件，这时如果发布到 github 的话(这里使用Github Desktop)，就会出现 <code>error: cannot spawn .git/hooks/pre-commit: No such file or directory</code> 的提示，导致无法发布</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603020534035.png" alt="image-20210603020534035"></p>
+<p>删掉这个文件就可以了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603020244305.png" alt="image-20210603020244305"></p>
+]]></content>
+      <categories>
+        <category>test</category>
+        <category>空页面</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL索引-B+树</title>
     <url>/post/de75e3e6/</url>
     <content><![CDATA[<p><a href="http://www.liuzk.com/category/tech"> 技术经验</a> <a href="http://www.liuzk.com/author/goomoon">goomoon</a> 1年前 (2019-11-12) 22952浏览 <a href="http://www.liuzk.com/410.html#comments">0评论</a></p>
@@ -333,124 +454,16 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 ]]></content>
   </entry>
   <entry>
-    <title>数据库编程</title>
-    <url>/post/8c5e4b35/</url>
-    <content><![CDATA[<h1>数据库编程</h1>
-<p>从前面我们知道数据库概念包含数据库文件、服务器和数据库客户端客户端我们之前已经用过的有navicat/mysql-client等程序。</p>
-<p>大家会发现如果用之前客户端几乎是不可能完全这个任务的，因为我们不可能去构造出那个插入10w行数据的SQL·可是，如果我们有一个功能能够插入一行数据，借助程序强大的特点-重复，就可以轻而易举的就将10w行数据收入磨下。这种通过使用程序代码的方式去连接数据库服务器，==通过和服务器进行交互完成对数据库的增删改查的方式，就称为数据库编程。==<br>
-而此刻学习的pymysql就是一种客户端。</p>
-<p>使用python代码充当客户端，连接数据库进行操作</p>
-<p>步骤：</p>
-<ul>
-<li>导入模块 pymysql</li>
-<li>建立连接对象 pymysql.connect()</li>
-<li>创建游标对象</li>
-<li>使用游标对象执行SQL语句</li>
-</ul>
-<blockquote>
-<p>cur.execute(&quot;sql语句”）</p>
-<p>execute()有返回值</p>
-<p>1)增删改，影响的行数</p>
-<p>2)查询，总记录数</p>
-</blockquote>
-<ul>
-<li>获取执行的结果</li>
-</ul>
-<blockquote>
-<p>1）取1条cur.fetchone（）#元组</p>
-<p>2）取所有cur.fetchall（）#（(），(），(））</p>
-</blockquote>
-<ul>
-<li>打印输出获取的内容</li>
-</ul>
-<blockquote>
-<p>for line in result_list:<br>
-print(line)</p>
-</blockquote>
-<ul>
-<li>关闭游标对象</li>
-</ul>
-<blockquote>
-<p>cur.close()</p>
-</blockquote>
-<ul>
-<li>关闭连接对象</li>
-</ul>
-<blockquote>
-<p>conn.close()</p>
-</blockquote>
-<p><img src="assets/zyu0-2020-11-07_13-34-18-1604727271305.png" alt="zyu0-2020-11-07_13-34-18"></p>
-<p><img src="assets/zyu0-2020-11-07_13-36-52.png" alt="zyu0-2020-11-07_13-36-52"></p>
-<p><img src="assets/zyu0-2020-11-07_13-43-51.png" alt="zyu0-2020-11-07_13-43-51"></p>
-<p><img src="assets/zyu0-2020-11-07_13-43-13.png" alt="zyu0-2020-11-07_13-43-13"></p>
-<h2 id="Python操作数据库CURD">Python操作数据库CURD</h2>
-<p>操作步骤：</p>
-<ul>
-<li>导入模块</li>
-<li>创建连接对象</li>
-<li>创建游标对象。</li>
-<li>使用游标对象执行SQL</li>
-</ul>
-<blockquote>
-<p>execute()</p>
-</blockquote>
-<ul>
-<li>提交</li>
-</ul>
-<blockquote>
-<p>conn.commit()</p>
-</blockquote>
-<ul>
-<li>获取执行的结果（影响的行数）并打印执行的结果</li>
-<li>关闭游标</li>
-<li>关闭连接</li>
-</ul>
-<h1>SQL防注入</h1>
-<p>什么是SOL注入</p>
-<p>产生原因：后台用户提交的带有恶意的数据和SQL进行字符串方式的拼接，从而影响了SQL语句的语义，最终产生数据泄露的现象·如果防止：sql语句的参数化，将SQL语句的所有数据参数存在一个列表中传递给execute函数的二个参数</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">input_name <span class="operator">=</span> input(&quot;请输入要查询的名称:\n&quot;)</span><br><span class="line"># <span class="number">4</span>、使用游标对象执行<span class="keyword">SQL</span>语句</span><br><span class="line"># 被注入过程分析</span><br><span class="line"># input_name <span class="operator">=</span> <span class="string">&#x27; or 1 or &#x27;</span></span><br><span class="line"># &quot;select * from goods where name = &#x27;%s&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># 防止注入：</span><br><span class="line"># <span class="number">1</span>)　构建参数列表params <span class="operator">=</span> input_name</span><br><span class="line"># <span class="number">2</span>) 把列表传递给 excute(<span class="keyword">sql</span>, params)</span><br><span class="line">params <span class="operator">=</span> [input_name]</span><br><span class="line"><span class="keyword">sql</span> <span class="operator">=</span> &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot;  # 这里不知为何参数可以自行替代</span><br><span class="line"># cur.execute(<span class="keyword">SQL</span>语句)　返回值是影响的行数，如果是查询语句，此处返回总记录数</span><br><span class="line"><span class="keyword">result</span> <span class="operator">=</span> cur.execute(<span class="keyword">sql</span>)</span><br><span class="line">print(&quot;查询到%s&quot; <span class="operator">%</span> <span class="keyword">result</span>)</span><br><span class="line"># <span class="number">5</span>、获取执行的结果</span><br><span class="line"># cur.fetchone()从查询结果中取出一条数据。数据库默认升序，此函数会取出第一条数据</span><br><span class="line"># result_list <span class="operator">=</span> cur.fetchone()</span><br><span class="line">result_list <span class="operator">=</span> cur.fetchall()</span><br><span class="line"></span><br><span class="line"># <span class="number">6</span>、打印输出获取的内容</span><br><span class="line"># print(result_list)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> result_list:</span><br><span class="line">    # line即一行数据，是一个元组</span><br><span class="line">    print(line)</span><br><span class="line"></span><br><span class="line"># <span class="number">7</span>、关闭游标对象</span><br><span class="line">cur.close()</span><br><span class="line"># <span class="number">8</span>、关闭连接对象</span><br><span class="line">conn.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>防注入的思路：</p>
-<p>sql中需要变化的地方，可以占位符%s %d…</p>
-<p>把参数封装到列表中</p>
-<p>把列表传递给 execute(sql，列表）</p>
+    <title>代码测试2</title>
+    <url>/post/f8915431/</url>
+    <content><![CDATA[<h1>你好</h1>
+<p>我来试试代码怎么显示</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reduce padding / margin indents on devices with narrow width.</span></span><br><span class="line"><span class="attr">mobile_layout_economy:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Android Chrome header panel color ($brand-bg / $headband-bg =&gt; $black-deep).</span></span><br><span class="line"><span class="attr">android_chrome_color:</span> <span class="string">&quot;#222&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Custom Logo (Do not support scheme Mist)</span></span><br><span class="line"><span class="attr">custom_logo:</span> <span class="comment">#/uploads/custom-logo.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">night</span> <span class="string">bright</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="string">ture</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="string">ture</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Shader <span class="string">&quot;Unity Shaders Book/Chapter 15/Dissolve&quot;</span> &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		<span class="comment">//控制消融程度。0正常显示，1完全消融</span></span><br><span class="line">		_BurnAmount (<span class="string">&quot;Burn Amount&quot;</span>, <span class="built_in">Range</span>(<span class="number">0.0</span>, <span class="number">1.0</span>)) = <span class="number">0.0</span></span><br><span class="line">		<span class="comment">//控制模拟烧焦效果时的线宽，值越大火焰边缘蔓延越广</span></span><br><span class="line">		_LineWidth(<span class="string">&quot;Burn Line Width&quot;</span>, <span class="built_in">Range</span>(<span class="number">0.0</span>, <span class="number">0.2</span>)) = <span class="number">0.1</span></span><br><span class="line">		<span class="comment">//漫反射纹理</span></span><br><span class="line">		_MainTex (<span class="string">&quot;Base (RGB)&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">		<span class="comment">//法线纹理</span></span><br><span class="line">		_BumpMap (<span class="string">&quot;Normal Map&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;bump&quot;</span> &#123;&#125;</span><br><span class="line">		<span class="comment">//火焰边缘的两种颜色值</span></span><br><span class="line">		_BurnFirstColor(<span class="string">&quot;Burn First Color&quot;</span>, Color) = (<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">		_BurnSecondColor(<span class="string">&quot;Burn Second Color&quot;</span>, Color) = (<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">		<span class="comment">//关键的噪声纹理</span></span><br><span class="line">		_BurnMap(<span class="string">&quot;Burn Map&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span>&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">		Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> <span class="string">&quot;Queue&quot;</span>=<span class="string">&quot;Geometry&quot;</span>&#125;</span><br><span class="line">		</span><br><span class="line">		Pass &#123;</span><br><span class="line">			<span class="comment">//为得到正确的光照，设置LightMode和编译指令</span></span><br><span class="line">			Tags &#123; <span class="string">&quot;LightMode&quot;</span>=<span class="string">&quot;ForwardBase&quot;</span> &#125;</span><br><span class="line">			<span class="comment">//渲染正面背面，消融会裸露模型内部构造</span></span><br><span class="line">			Cull Off</span><br><span class="line">			</span><br><span class="line">			CGPROGRAM</span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Lighting.cginc&quot;</span></span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;AutoLight.cginc&quot;</span></span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_fwdbase</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">			</span><br><span class="line">			fixed _BurnAmount;</span><br><span class="line">			fixed _LineWidth;</span><br><span class="line">			sampler2D _MainTex;</span><br><span class="line">			sampler2D _BumpMap;</span><br><span class="line">			fixed4 _BurnFirstColor;</span><br><span class="line">			fixed4 _BurnSecondColor;</span><br><span class="line">			sampler2D _BurnMap;</span><br><span class="line">			</span><br><span class="line">			float4 _MainTex_ST;</span><br><span class="line">			float4 _BumpMap_ST;</span><br><span class="line">			float4 _BurnMap_ST;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">a2v</span> &#123;</span></span><br><span class="line">				float4 vertex : POSITION;</span><br><span class="line">				float3 normal : NORMAL;</span><br><span class="line">				float4 tangent : TANGENT;</span><br><span class="line">				float4 texcoord : TEXCOORD0;</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">v2f</span> &#123;</span></span><br><span class="line">				float4 pos : SV_POSITION;</span><br><span class="line">				float2 uvMainTex : TEXCOORD0;</span><br><span class="line">				float2 uvBumpMap : TEXCOORD1;</span><br><span class="line">				float2 uvBurnMap : TEXCOORD2;</span><br><span class="line">				float3 lightDir : TEXCOORD3;</span><br><span class="line">				float3 worldPos : TEXCOORD4;</span><br><span class="line">				<span class="built_in">SHADOW_COORDS</span>(<span class="number">5</span>)</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="function">v2f <span class="title">vert</span><span class="params">(a2v v)</span> </span>&#123;</span><br><span class="line">				v2f o;</span><br><span class="line">				o.pos = <span class="built_in">UnityObjectToClipPos</span>(v.vertex);</span><br><span class="line">				<span class="comment">//使用宏计算纹理对应的纹理坐标</span></span><br><span class="line">				o.uvMainTex = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _MainTex);</span><br><span class="line">				o.uvBumpMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BumpMap);</span><br><span class="line">				o.uvBurnMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BurnMap);</span><br><span class="line">				</span><br><span class="line">				TANGENT_SPACE_ROTATION;</span><br><span class="line">				<span class="comment">//光源方向从模型空间变换到切线空间</span></span><br><span class="line">  				o.lightDir = <span class="built_in">mul</span>(rotation, <span class="built_in">ObjSpaceLightDir</span>(v.vertex)).xyz;</span><br><span class="line">  				</span><br><span class="line">  				o.worldPos = <span class="built_in">mul</span>(unity_ObjectToWorld, v.vertex).xyz;</span><br><span class="line">  				<span class="comment">//计算世界空间下的阴影纹理的采样坐标，给后面做透明度测试有正确阴影的Pass用</span></span><br><span class="line">  				<span class="built_in">TRANSFER_SHADOW</span>(o);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> o;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">fixed4 <span class="title">frag</span><span class="params">(v2f i)</span> : SV_Target &#123;</span></span><br><span class="line">				<span class="comment">//采样噪声纹理</span></span><br><span class="line">				fixed3 burn = <span class="built_in">tex2D</span>(_BurnMap, i.uvBurnMap).rgb;</span><br><span class="line">				<span class="comment">//&lt;0像素被剔除，通过正常光照计算</span></span><br><span class="line">				<span class="built_in">clip</span>(burn.r - _BurnAmount);</span><br><span class="line">				<span class="comment">//计算切线空间下的光照方向和法线</span></span><br><span class="line">				float3 tangentLightDir = <span class="built_in">normalize</span>(i.lightDir);</span><br><span class="line">				fixed3 tangentNormal = <span class="built_in">UnpackNormal</span>(<span class="built_in">tex2D</span>(_BumpMap, i.uvBumpMap));</span><br><span class="line">				<span class="comment">//材质反射率</span></span><br><span class="line">				fixed3 albedo = <span class="built_in">tex2D</span>(_MainTex, i.uvMainTex).rgb;</span><br><span class="line">				<span class="comment">//环境</span></span><br><span class="line">				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;</span><br><span class="line">				<span class="comment">//漫反射</span></span><br><span class="line">				fixed3 diffuse = _LightColor0.rgb * albedo * <span class="built_in">max</span>(<span class="number">0</span>, <span class="built_in">dot</span>(tangentNormal, tangentLightDir));</span><br><span class="line">				<span class="comment">//模拟烧焦颜色变化，t=1像素位于消融边界，t=0像素为正常模型颜色，否则在两个参数之间插值</span></span><br><span class="line">				fixed t = <span class="number">1</span> - <span class="built_in">smoothstep</span>(<span class="number">0.0</span>, _LineWidth, burn.r - _BurnAmount);</span><br><span class="line">				fixed3 burnColor = <span class="built_in">lerp</span>(_BurnFirstColor, _BurnSecondColor, t);</span><br><span class="line">				<span class="comment">//加强烧焦效果</span></span><br><span class="line">				burnColor = <span class="built_in">pow</span>(burnColor, <span class="number">5</span>);</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">UNITY_LIGHT_ATTENUATION</span>(atten, i, i.worldPos);</span><br><span class="line">				fixed3 finalColor = <span class="built_in">lerp</span>(ambient + diffuse * atten, burnColor, t * <span class="built_in">step</span>(<span class="number">0.0001</span>, _BurnAmount));</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">fixed4</span>(finalColor, <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			ENDCG</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Pass to render object as a shadow caster</span></span><br><span class="line">		Pass &#123;</span><br><span class="line">			<span class="comment">//设置投射阴影的LightMod和编译指令</span></span><br><span class="line">			Tags &#123; <span class="string">&quot;LightMode&quot;</span> = <span class="string">&quot;ShadowCaster&quot;</span> &#125;</span><br><span class="line">			</span><br><span class="line">			CGPROGRAM</span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_shadowcaster</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;UnityCG.cginc&quot;</span></span></span><br><span class="line">			</span><br><span class="line">			fixed _BurnAmount;</span><br><span class="line">			sampler2D _BurnMap;</span><br><span class="line">			float4 _BurnMap_ST;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">v2f</span> &#123;</span></span><br><span class="line">				<span class="comment">//内置宏帮助计算阴影投射时需要的各种变量</span></span><br><span class="line">				V2F_SHADOW_CASTER;</span><br><span class="line">				float2 uvBurnMap : TEXCOORD1;</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="function">v2f <span class="title">vert</span><span class="params">(appdata_base v)</span> </span>&#123;</span><br><span class="line">				v2f o;</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">TRANSFER_SHADOW_CASTER_NORMALOFFSET</span>(o)</span><br><span class="line">				</span><br><span class="line">				o.uvBurnMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BurnMap);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> o;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">fixed4 <span class="title">frag</span><span class="params">(v2f i)</span> : SV_Target &#123;</span></span><br><span class="line">				fixed3 burn = <span class="built_in">tex2D</span>(_BurnMap, i.uvBurnMap).rgb;</span><br><span class="line">				<span class="comment">//剔除片元</span></span><br><span class="line">				<span class="built_in">clip</span>(burn.r - _BurnAmount);</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">SHADOW_CASTER_FRAGMENT</span>(i)</span><br><span class="line">			&#125;</span><br><span class="line">			ENDCG</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	FallBack <span class="string">&quot;Diffuse&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看系统的path环境变量</span></span><br><span class="line"><span class="comment"># 1`导入模块sys</span></span><br><span class="line"><span class="comment"># 2`sys.path 可以查看到环境变量的具体内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> sys.path:</span><br><span class="line">    <span class="built_in">print</span>(p)</span><br><span class="line"><span class="comment"># 把指定的路径加入环境变量中</span></span><br><span class="line"><span class="comment"># 追加到末尾</span></span><br><span class="line"><span class="comment"># sys.path.append(&quot;/home/zyu0/Desktop/test&quot;)</span></span><br><span class="line"><span class="comment">#　追加到开头</span></span><br><span class="line">sys.path.insert(<span class="number">0</span>,<span class="string">&quot;/home/zyu0/Desktop/test&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;--&quot;</span>*<span class="number">20</span>)</span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> sys.path:</span><br><span class="line">    <span class="built_in">print</span>(p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> app</span><br><span class="line"><span class="built_in">print</span>(app.name)</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
       <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网站配置注意点</title>
-    <url>/post/28f332e5/</url>
-    <content><![CDATA[<h2 id="Front-matter写法">Front-matter写法</h2>
-<p>每个单词后冒号必须是英文，且冒号后必须有一个空格</p>
-<h2 id="PWA和网站提示更新">PWA和网站提示更新</h2>
-<p>pwa的实质其实是惰性加载。你看到的提示更新是为了应对这种惰性加载的手段，通过监测站点内容是否变动，弹窗提示你更新</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>配置PWA后布署失败的解决方式</title>
-    <url>/post/b6596b48/</url>
-    <content><![CDATA[<p>在配置 好PWA最后布署页面的时候，如果已经 hexo s 生成本地页面的话，会在<code>.git/hooks</code> 目录下生成一个 <code>pre-commit</code> 文件，这时如果发布到 github 的话(这里使用Github Desktop)，就会出现 <code>error: cannot spawn .git/hooks/pre-commit: No such file or directory</code> 的提示，导致无法发布</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603020534035.png" alt="image-20210603020534035"></p>
-<p>删掉这个文件就可以了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603020244305.png" alt="image-20210603020244305"></p>
-]]></content>
-      <categories>
-        <category>test</category>
-        <category>空页面</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
+        <tag>zzz</tag>
       </tags>
   </entry>
   <entry>
