@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>https://tazyu.xyz/post/28f332e5/</loc>
+    <loc>https://tazyu.xyz/post/b6596b48/</loc>
     
     <lastmod>2021-06-02</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tazyu.xyz/post/1b2c478a/</loc>
+    <loc>https://tazyu.xyz/post/28f332e5/</loc>
     
     <lastmod>2021-06-02</lastmod>
     
@@ -179,6 +179,13 @@
   </url>
   
   <url>
+    <loc>https://tazyu.xyz/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-06-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tazyu.xyz/tags/hexo/</loc>
     <lastmod>2021-06-02</lastmod>
     <changefreq>daily</changefreq>
@@ -187,13 +194,6 @@
   
   <url>
     <loc>https://tazyu.xyz/tags/butterfly/</loc>
-    <lastmod>2021-06-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tazyu.xyz/tags/%E7%A9%BA%E9%A1%B5%E9%9D%A2/</loc>
     <lastmod>2021-06-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

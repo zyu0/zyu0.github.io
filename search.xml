@@ -422,6 +422,23 @@ print(line)</p>
       </tags>
   </entry>
   <entry>
+    <title>配置PWA后布署失败的解决方式</title>
+    <url>/post/b6596b48/</url>
+    <content><![CDATA[<h2 id=""></h2>
+<p>在配置 好PWA最后布署页面的时候，如果已经 hexo s 生成本地页面的话，会在<code>.git/hooks</code> 目录下生成一个 <code>pre-commit</code> 文件，这时如果发布到 github 的话(这里使用Github Desktop)，就会出现 <code>error: cannot spawn .git/hooks/pre-commit: No such file or directory</code> 的提示，导致无法发布</p>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210603020534035.png" alt="image-20210603020534035"></p>
+<p>删掉这个文件就可以了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603020244305.png" alt="image-20210603020244305"></p>
+]]></content>
+      <categories>
+        <category>test</category>
+        <category>空页面</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网站配置注意点</title>
     <url>/post/28f332e5/</url>
     <content><![CDATA[<h2 id="Front-matter写法">Front-matter写法</h2>
@@ -435,18 +452,6 @@ print(line)</p>
       <tags>
         <tag>hexo</tag>
         <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>空页面-1</title>
-    <url>/post/1b2c478a/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>test</category>
-        <category>空页面</category>
-      </categories>
-      <tags>
-        <tag>空页面</tag>
       </tags>
   </entry>
   <entry>
