@@ -90,15 +90,19 @@ print(line)</p>
       </tags>
   </entry>
   <entry>
-    <title>Front-matter写法注意点</title>
-    <url>/post/103d05/</url>
-    <content><![CDATA[<p>每个单词后冒号必须是英文，且冒号后必须有一个空格</p>
+    <title>网站配置注意点</title>
+    <url>/post/28f332e5/</url>
+    <content><![CDATA[<h2 id="Front-matter写法">Front-matter写法</h2>
+<p>每个单词后冒号必须是英文，且冒号后必须有一个空格</p>
+<h2 id="PWA和网站提示更新">PWA和网站提示更新</h2>
+<p>pwa的实质其实是惰性加载。你看到的提示更新是为了应对这种惰性加载的手段，通过监测站点内容是否变动，弹窗提示你更新</p>
 ]]></content>
       <categories>
-        <category>code</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>code</tag>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
       </tags>
   </entry>
   <entry>
@@ -416,16 +420,6 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       <tags>
         <tag>zzz</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>重要通知</title>
-    <url>/post/8efd8d8a/</url>
-    <content><![CDATA[<h1>网站重构中</h1>
-<p>原网页基于wordpress，对markdown文档支持不友好，目前在使用Hexo和github action重构博客系统，敬请期待！</p>
-<p>原网站主要内容为作品集，目前主要是两个视频链接，在此留下Bilibili链接：</p>
-<p><a href="https://space.bilibili.com/34894815/channel/detail?cid=178152&amp;ctype=0">https://space.bilibili.com/34894815/channel/detail?cid=178152&amp;ctype=0</a></p>
-<p>技术文章等待上传</p>
-]]></content>
   </entry>
   <entry>
     <title>重要通知</title>
