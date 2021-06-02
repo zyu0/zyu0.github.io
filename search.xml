@@ -90,6 +90,19 @@ print(line)</p>
       </tags>
   </entry>
   <entry>
+    <title>npm插件安装方式</title>
+    <url>/post/85fd8bbd/</url>
+    <content><![CDATA[<h2 id="正常安装">正常安装</h2>
+<h2 id="非正常安装">非正常安装</h2>
+]]></content>
+      <categories>
+        <category>空页面</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网站配置注意点</title>
     <url>/post/28f332e5/</url>
     <content><![CDATA[<h2 id="Front-matter写法">Front-matter写法</h2>
@@ -106,19 +119,6 @@ print(line)</p>
       </tags>
   </entry>
   <entry>
-    <title>npm插件安装方式</title>
-    <url>/post/85fd8bbd/</url>
-    <content><![CDATA[<h2 id="正常安装">正常安装</h2>
-<h2 id="非正常安装">非正常安装</h2>
-]]></content>
-      <categories>
-        <category>空页面</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>空页面-1</title>
     <url>/post/1b2c478a/</url>
     <content><![CDATA[]]></content>
@@ -127,45 +127,6 @@ print(line)</p>
       </categories>
       <tags>
         <tag>空页面</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PicGo探索</title>
-    <url>/post/38f64154/</url>
-    <content><![CDATA[<h2 id="上传后删除测试">上传后删除测试</h2>
-<p>更新：</p>
-<ul>
-<li>Akilar店长：从仓库删去到github的缓存被清空是有一段缓冲期的。这期间你确实还有可能访问到被删除的图片。另一种可能是你是通过发布release的，那样的话你的图片还存在release里。删除当前仓库的图片不会对已经发布的release造成任何影响。</li>
-<li>失效时间等待：大概10小时左右失效</li>
-</ul>
-<blockquote>
-<p>原文章内容：可证明的是当图片上传至github后，即使在github中删除，这里的url同样有效，原因还未知</p>
-<p>如以下这两张图片，搜索链接还能找到</p>
-</blockquote>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">empty_gallery</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg" alt="empty_gallery"></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">hayward-gallery-50th-anniversary-03</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg" alt="hayward-gallery-50th-anniversary-03"></p>
-<h2 id="同名上传测试">同名上传测试</h2>
-<p>当上传至一个文件夹下时PicGo会报错，上传失败</p>
-<ul>
-<li>希望以后能覆盖上传</li>
-</ul>
-<p>切换上传文件夹后可行，如以下两张图片</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
-<p>经测试，我更喜欢按写文章的日期切换上传文件夹，这样在github中整理的更清晰，文件PicGo提供了时间戳重命名功能，但我觉得那个看着实在不明确，当图片有问题去github查找太难了，保留图片名字的差异化最好。虽然PicGo也提供了上传前手动重命名的选项，但太麻烦，不够优雅</p>
-<blockquote>
-<p>上面方式也有一个问题，就是图片在github查找时排序不是按上传时间排列的，而是按名字排序，会导致从时间顺序查找不方便，方法还需要斟酌。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
       </tags>
   </entry>
   <entry>
@@ -324,6 +285,45 @@ print(line)</p>
 <h2 id="总结">总结</h2>
 <p>本篇文章从二叉查找树，详细说明了为什么 MySQL 用 B+ 树作为数据的索引，以及在 InnoDB 中数据库如何通过 B+ 树索引来存储数据以及查找数据。</p>
 <p>我们一定要记住这句话：数据即索引，索引即数据。</p>
+]]></content>
+      <categories>
+        <category>code</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PicGo探索</title>
+    <url>/post/38f64154/</url>
+    <content><![CDATA[<h2 id="上传后删除测试">上传后删除测试</h2>
+<p>更新：</p>
+<ul>
+<li>Akilar店长：从仓库删去到github的缓存被清空是有一段缓冲期的。这期间你确实还有可能访问到被删除的图片。另一种可能是你是通过发布release的，那样的话你的图片还存在release里。删除当前仓库的图片不会对已经发布的release造成任何影响。</li>
+<li>失效时间等待：大概10小时左右失效</li>
+</ul>
+<blockquote>
+<p>原文章内容：可证明的是当图片上传至github后，即使在github中删除，这里的url同样有效，原因还未知</p>
+<p>如以下这两张图片，搜索链接还能找到</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">empty_gallery</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg" alt="empty_gallery"></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">hayward-gallery-50th-anniversary-03</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg" alt="hayward-gallery-50th-anniversary-03"></p>
+<h2 id="同名上传测试">同名上传测试</h2>
+<p>当上传至一个文件夹下时PicGo会报错，上传失败</p>
+<ul>
+<li>希望以后能覆盖上传</li>
+</ul>
+<p>切换上传文件夹后可行，如以下两张图片</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
+<p>经测试，我更喜欢按写文章的日期切换上传文件夹，这样在github中整理的更清晰，文件PicGo提供了时间戳重命名功能，但我觉得那个看着实在不明确，当图片有问题去github查找太难了，保留图片名字的差异化最好。虽然PicGo也提供了上传前手动重命名的选项，但太麻烦，不够优雅</p>
+<blockquote>
+<p>上面方式也有一个问题，就是图片在github查找时排序不是按上传时间排列的，而是按名字排序，会导致从时间顺序查找不方便，方法还需要斟酌。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>code</category>
