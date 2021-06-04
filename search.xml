@@ -6,6 +6,9 @@
     <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
 <a href="#">Post not found: test</a>
 ]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
   </entry>
   <entry>
     <title>test</title>
@@ -81,6 +84,9 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>臣亮言：<mark class="hl-label default">先帝</mark> 创业未半，而<mark class="hl-label blue">中道崩殂</mark> 。今天下三分，<mark class="hl-label pink">益州疲敝</mark> ，此诚<mark class="hl-label red">危急存亡之秋</mark> 也！然侍衞之臣，不懈于内；<mark class="hl-label purple">忠志之士</mark> ，忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气；不宜妄自菲薄，引喻失义，以塞忠谏之路也。<br>
 宫中、府中，俱为一体；陟罚臧否，不宜异同。若有<mark class="hl-label orange">作奸</mark> 、<mark class="hl-label green">犯科</mark> ，及为忠善者，宜付有司，论其刑赏，以昭陛下平明之治；不宜偏私，使内外异法也。</p>
 ]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
   </entry>
   <entry>
     <title>PicGo探索</title>
@@ -115,7 +121,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 </blockquote>
 ]]></content>
       <categories>
-        <category>code</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
         <tag>code</tag>
@@ -169,6 +175,21 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/post/0/</url>
+    <content><![CDATA[<h2 id="高级配置">高级配置</h2>
+<h3 id="随机文章跳转">随机文章跳转</h3>
+<p>方法取自 <a class="btn-beautify button--animated " href="https://blog.hclonely.com/posts/57bd67ce/" 
+  title="HCLonely"><span>HCLonely</span></a></p>
+<p>客根目录/scripts(没有请自行创建)下新建random.js文件，内容如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">hexo.extend.generator.register(<span class="string">&#x27;random&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">locals</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> config = hexo.config.random || &#123;&#125;</span><br><span class="line">  <span class="keyword">const</span> posts = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> post <span class="keyword">of</span> locals.posts.data) &#123;</span><br><span class="line">    <span class="keyword">if</span> (post.random !== <span class="literal">false</span>) posts.push(post.path)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">path</span>: config.path || <span class="string">&#x27;random/index.html&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: <span class="string">`&lt;html&gt;&lt;head&gt;&lt;script&gt;var posts=<span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(posts)&#125;</span>;window.open(&#x27;/&#x27;+posts[Math.floor(Math.random() * posts.length)],&quot;_self&quot;)&lt;/script&gt;&lt;/head&gt;&lt;/html&gt;`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在 主题配置文件中的<code>menu</code>下添加 <code>随机文章: /random/ || fas fa-random</code></p>
+<blockquote>
+<p>如果不想随机跳转到某篇文章，只需在这篇文章Front-matter添加random: false</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
     <title>字体设置</title>
     <url>/post/4271b0f6/</url>
     <content><![CDATA[<h2 id="获取谷歌在线字体">获取谷歌在线字体</h2>
@@ -182,6 +203,9 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>请跳转糖果屋<a class="btn-beautify button--animated " href="https://akilar.top/posts/ebf20e02/" 
   title="糖果屋"><span>糖果屋</span></a></p>
 ]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
       <tags>
         <tag>博客搭建</tag>
       </tags>
@@ -234,6 +258,8 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603063013336.png" alt="image-20210603063013336"></p>
 <h2 id="一图流注意点">一图流注意点</h2>
 <p>在做完删除<code>banner</code>以下的图片路径后，必须把源文件也删除，否则<code>hexo g</code>的时候还会生成图片，会发现删掉的图片一直在那里挡住背景图片</p>
+<h2 id="front-matter突然自动排序等奇怪问题">front matter突然自动排序等奇怪问题</h2>
+<p>不要在本地<code>hexo s</code>后编辑文章，否则会实时又变动，导致文章编辑出错</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -252,8 +278,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603020244305.png" alt="image-20210603020244305"></p>
 ]]></content>
       <categories>
-        <category>test</category>
-        <category>空页面</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
         <tag>博客搭建</tag>
@@ -418,7 +443,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 ![[Recording 20210604075336.webm]]</p>
 ]]></content>
       <categories>
-        <category>code</category>
+        <category>程序</category>
       </categories>
       <tags>
         <tag>code</tag>
@@ -507,7 +532,7 @@ print(line)</p>
 <p>把列表传递给 execute(sql，列表）</p>
 ]]></content>
       <categories>
-        <category>code</category>
+        <category>程序</category>
       </categories>
       <tags>
         <tag>code</tag>
@@ -522,6 +547,9 @@ print(line)</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Shader <span class="string">&quot;Unity Shaders Book/Chapter 15/Dissolve&quot;</span> &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		<span class="comment">//控制消融程度。0正常显示，1完全消融</span></span><br><span class="line">		_BurnAmount (<span class="string">&quot;Burn Amount&quot;</span>, <span class="built_in">Range</span>(<span class="number">0.0</span>, <span class="number">1.0</span>)) = <span class="number">0.0</span></span><br><span class="line">		<span class="comment">//控制模拟烧焦效果时的线宽，值越大火焰边缘蔓延越广</span></span><br><span class="line">		_LineWidth(<span class="string">&quot;Burn Line Width&quot;</span>, <span class="built_in">Range</span>(<span class="number">0.0</span>, <span class="number">0.2</span>)) = <span class="number">0.1</span></span><br><span class="line">		<span class="comment">//漫反射纹理</span></span><br><span class="line">		_MainTex (<span class="string">&quot;Base (RGB)&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">		<span class="comment">//法线纹理</span></span><br><span class="line">		_BumpMap (<span class="string">&quot;Normal Map&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;bump&quot;</span> &#123;&#125;</span><br><span class="line">		<span class="comment">//火焰边缘的两种颜色值</span></span><br><span class="line">		_BurnFirstColor(<span class="string">&quot;Burn First Color&quot;</span>, Color) = (<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">		_BurnSecondColor(<span class="string">&quot;Burn Second Color&quot;</span>, Color) = (<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">		<span class="comment">//关键的噪声纹理</span></span><br><span class="line">		_BurnMap(<span class="string">&quot;Burn Map&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span>&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">		Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> <span class="string">&quot;Queue&quot;</span>=<span class="string">&quot;Geometry&quot;</span>&#125;</span><br><span class="line">		</span><br><span class="line">		Pass &#123;</span><br><span class="line">			<span class="comment">//为得到正确的光照，设置LightMode和编译指令</span></span><br><span class="line">			Tags &#123; <span class="string">&quot;LightMode&quot;</span>=<span class="string">&quot;ForwardBase&quot;</span> &#125;</span><br><span class="line">			<span class="comment">//渲染正面背面，消融会裸露模型内部构造</span></span><br><span class="line">			Cull Off</span><br><span class="line">			</span><br><span class="line">			CGPROGRAM</span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;Lighting.cginc&quot;</span></span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;AutoLight.cginc&quot;</span></span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_fwdbase</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">			</span><br><span class="line">			fixed _BurnAmount;</span><br><span class="line">			fixed _LineWidth;</span><br><span class="line">			sampler2D _MainTex;</span><br><span class="line">			sampler2D _BumpMap;</span><br><span class="line">			fixed4 _BurnFirstColor;</span><br><span class="line">			fixed4 _BurnSecondColor;</span><br><span class="line">			sampler2D _BurnMap;</span><br><span class="line">			</span><br><span class="line">			float4 _MainTex_ST;</span><br><span class="line">			float4 _BumpMap_ST;</span><br><span class="line">			float4 _BurnMap_ST;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">a2v</span> &#123;</span></span><br><span class="line">				float4 vertex : POSITION;</span><br><span class="line">				float3 normal : NORMAL;</span><br><span class="line">				float4 tangent : TANGENT;</span><br><span class="line">				float4 texcoord : TEXCOORD0;</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">v2f</span> &#123;</span></span><br><span class="line">				float4 pos : SV_POSITION;</span><br><span class="line">				float2 uvMainTex : TEXCOORD0;</span><br><span class="line">				float2 uvBumpMap : TEXCOORD1;</span><br><span class="line">				float2 uvBurnMap : TEXCOORD2;</span><br><span class="line">				float3 lightDir : TEXCOORD3;</span><br><span class="line">				float3 worldPos : TEXCOORD4;</span><br><span class="line">				<span class="built_in">SHADOW_COORDS</span>(<span class="number">5</span>)</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="function">v2f <span class="title">vert</span><span class="params">(a2v v)</span> </span>&#123;</span><br><span class="line">				v2f o;</span><br><span class="line">				o.pos = <span class="built_in">UnityObjectToClipPos</span>(v.vertex);</span><br><span class="line">				<span class="comment">//使用宏计算纹理对应的纹理坐标</span></span><br><span class="line">				o.uvMainTex = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _MainTex);</span><br><span class="line">				o.uvBumpMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BumpMap);</span><br><span class="line">				o.uvBurnMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BurnMap);</span><br><span class="line">				</span><br><span class="line">				TANGENT_SPACE_ROTATION;</span><br><span class="line">				<span class="comment">//光源方向从模型空间变换到切线空间</span></span><br><span class="line">  				o.lightDir = <span class="built_in">mul</span>(rotation, <span class="built_in">ObjSpaceLightDir</span>(v.vertex)).xyz;</span><br><span class="line">  				</span><br><span class="line">  				o.worldPos = <span class="built_in">mul</span>(unity_ObjectToWorld, v.vertex).xyz;</span><br><span class="line">  				<span class="comment">//计算世界空间下的阴影纹理的采样坐标，给后面做透明度测试有正确阴影的Pass用</span></span><br><span class="line">  				<span class="built_in">TRANSFER_SHADOW</span>(o);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> o;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">fixed4 <span class="title">frag</span><span class="params">(v2f i)</span> : SV_Target &#123;</span></span><br><span class="line">				<span class="comment">//采样噪声纹理</span></span><br><span class="line">				fixed3 burn = <span class="built_in">tex2D</span>(_BurnMap, i.uvBurnMap).rgb;</span><br><span class="line">				<span class="comment">//&lt;0像素被剔除，通过正常光照计算</span></span><br><span class="line">				<span class="built_in">clip</span>(burn.r - _BurnAmount);</span><br><span class="line">				<span class="comment">//计算切线空间下的光照方向和法线</span></span><br><span class="line">				float3 tangentLightDir = <span class="built_in">normalize</span>(i.lightDir);</span><br><span class="line">				fixed3 tangentNormal = <span class="built_in">UnpackNormal</span>(<span class="built_in">tex2D</span>(_BumpMap, i.uvBumpMap));</span><br><span class="line">				<span class="comment">//材质反射率</span></span><br><span class="line">				fixed3 albedo = <span class="built_in">tex2D</span>(_MainTex, i.uvMainTex).rgb;</span><br><span class="line">				<span class="comment">//环境</span></span><br><span class="line">				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;</span><br><span class="line">				<span class="comment">//漫反射</span></span><br><span class="line">				fixed3 diffuse = _LightColor0.rgb * albedo * <span class="built_in">max</span>(<span class="number">0</span>, <span class="built_in">dot</span>(tangentNormal, tangentLightDir));</span><br><span class="line">				<span class="comment">//模拟烧焦颜色变化，t=1像素位于消融边界，t=0像素为正常模型颜色，否则在两个参数之间插值</span></span><br><span class="line">				fixed t = <span class="number">1</span> - <span class="built_in">smoothstep</span>(<span class="number">0.0</span>, _LineWidth, burn.r - _BurnAmount);</span><br><span class="line">				fixed3 burnColor = <span class="built_in">lerp</span>(_BurnFirstColor, _BurnSecondColor, t);</span><br><span class="line">				<span class="comment">//加强烧焦效果</span></span><br><span class="line">				burnColor = <span class="built_in">pow</span>(burnColor, <span class="number">5</span>);</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">UNITY_LIGHT_ATTENUATION</span>(atten, i, i.worldPos);</span><br><span class="line">				fixed3 finalColor = <span class="built_in">lerp</span>(ambient + diffuse * atten, burnColor, t * <span class="built_in">step</span>(<span class="number">0.0001</span>, _BurnAmount));</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">fixed4</span>(finalColor, <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			ENDCG</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Pass to render object as a shadow caster</span></span><br><span class="line">		Pass &#123;</span><br><span class="line">			<span class="comment">//设置投射阴影的LightMod和编译指令</span></span><br><span class="line">			Tags &#123; <span class="string">&quot;LightMode&quot;</span> = <span class="string">&quot;ShadowCaster&quot;</span> &#125;</span><br><span class="line">			</span><br><span class="line">			CGPROGRAM</span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_shadowcaster</span></span><br><span class="line">			</span><br><span class="line">			<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;UnityCG.cginc&quot;</span></span></span><br><span class="line">			</span><br><span class="line">			fixed _BurnAmount;</span><br><span class="line">			sampler2D _BurnMap;</span><br><span class="line">			float4 _BurnMap_ST;</span><br><span class="line">			</span><br><span class="line">			<span class="class"><span class="keyword">struct</span> <span class="title">v2f</span> &#123;</span></span><br><span class="line">				<span class="comment">//内置宏帮助计算阴影投射时需要的各种变量</span></span><br><span class="line">				V2F_SHADOW_CASTER;</span><br><span class="line">				float2 uvBurnMap : TEXCOORD1;</span><br><span class="line">			&#125;;</span><br><span class="line">			</span><br><span class="line">			<span class="function">v2f <span class="title">vert</span><span class="params">(appdata_base v)</span> </span>&#123;</span><br><span class="line">				v2f o;</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">TRANSFER_SHADOW_CASTER_NORMALOFFSET</span>(o)</span><br><span class="line">				</span><br><span class="line">				o.uvBurnMap = <span class="built_in">TRANSFORM_TEX</span>(v.texcoord, _BurnMap);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> o;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">fixed4 <span class="title">frag</span><span class="params">(v2f i)</span> : SV_Target &#123;</span></span><br><span class="line">				fixed3 burn = <span class="built_in">tex2D</span>(_BurnMap, i.uvBurnMap).rgb;</span><br><span class="line">				<span class="comment">//剔除片元</span></span><br><span class="line">				<span class="built_in">clip</span>(burn.r - _BurnAmount);</span><br><span class="line">				</span><br><span class="line">				<span class="built_in">SHADOW_CASTER_FRAGMENT</span>(i)</span><br><span class="line">			&#125;</span><br><span class="line">			ENDCG</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	FallBack <span class="string">&quot;Diffuse&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看系统的path环境变量</span></span><br><span class="line"><span class="comment"># 1`导入模块sys</span></span><br><span class="line"><span class="comment"># 2`sys.path 可以查看到环境变量的具体内容</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> sys.path:</span><br><span class="line">    <span class="built_in">print</span>(p)</span><br><span class="line"><span class="comment"># 把指定的路径加入环境变量中</span></span><br><span class="line"><span class="comment"># 追加到末尾</span></span><br><span class="line"><span class="comment"># sys.path.append(&quot;/home/zyu0/Desktop/test&quot;)</span></span><br><span class="line"><span class="comment">#　追加到开头</span></span><br><span class="line">sys.path.insert(<span class="number">0</span>,<span class="string">&quot;/home/zyu0/Desktop/test&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;--&quot;</span>*<span class="number">20</span>)</span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> sys.path:</span><br><span class="line">    <span class="built_in">print</span>(p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> app</span><br><span class="line"><span class="built_in">print</span>(app.name)</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
       <tags>
         <tag>zzz</tag>
       </tags>
