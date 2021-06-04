@@ -1,95 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>数据库编程</title>
-    <url>/post/8c5e4b35/</url>
-    <content><![CDATA[<h1>数据库编程</h1>
-<p>从前面我们知道数据库概念包含数据库文件、服务器和数据库客户端客户端我们之前已经用过的有navicat/mysql-client等程序。</p>
-<p>大家会发现如果用之前客户端几乎是不可能完全这个任务的，因为我们不可能去构造出那个插入10w行数据的SQL·可是，如果我们有一个功能能够插入一行数据，借助程序强大的特点-重复，就可以轻而易举的就将10w行数据收入磨下。这种通过使用程序代码的方式去连接数据库服务器，==通过和服务器进行交互完成对数据库的增删改查的方式，就称为数据库编程。==<br>
-而此刻学习的pymysql就是一种客户端。</p>
-<p>使用python代码充当客户端，连接数据库进行操作</p>
-<p>步骤：</p>
-<ul>
-<li>导入模块 pymysql</li>
-<li>建立连接对象 pymysql.connect()</li>
-<li>创建游标对象</li>
-<li>使用游标对象执行SQL语句</li>
-</ul>
-<blockquote>
-<p>cur.execute(&quot;sql语句”）</p>
-<p>execute()有返回值</p>
-<p>1)增删改，影响的行数</p>
-<p>2)查询，总记录数</p>
-</blockquote>
-<ul>
-<li>获取执行的结果</li>
-</ul>
-<blockquote>
-<p>1）取1条cur.fetchone（）#元组</p>
-<p>2）取所有cur.fetchall（）#（(），(），(））</p>
-</blockquote>
-<ul>
-<li>打印输出获取的内容</li>
-</ul>
-<blockquote>
-<p>for line in result_list:<br>
-print(line)</p>
-</blockquote>
-<ul>
-<li>关闭游标对象</li>
-</ul>
-<blockquote>
-<p>cur.close()</p>
-</blockquote>
-<ul>
-<li>关闭连接对象</li>
-</ul>
-<blockquote>
-<p>conn.close()</p>
-</blockquote>
-<p><img src="assets/zyu0-2020-11-07_13-34-18-1604727271305.png" alt="zyu0-2020-11-07_13-34-18"></p>
-<p><img src="assets/zyu0-2020-11-07_13-36-52.png" alt="zyu0-2020-11-07_13-36-52"></p>
-<p><img src="assets/zyu0-2020-11-07_13-43-51.png" alt="zyu0-2020-11-07_13-43-51"></p>
-<p><img src="assets/zyu0-2020-11-07_13-43-13.png" alt="zyu0-2020-11-07_13-43-13"></p>
-<h2 id="Python操作数据库CURD">Python操作数据库CURD</h2>
-<p>操作步骤：</p>
-<ul>
-<li>导入模块</li>
-<li>创建连接对象</li>
-<li>创建游标对象。</li>
-<li>使用游标对象执行SQL</li>
-</ul>
-<blockquote>
-<p>execute()</p>
-</blockquote>
-<ul>
-<li>提交</li>
-</ul>
-<blockquote>
-<p>conn.commit()</p>
-</blockquote>
-<ul>
-<li>获取执行的结果（影响的行数）并打印执行的结果</li>
-<li>关闭游标</li>
-<li>关闭连接</li>
-</ul>
-<h1>SQL防注入</h1>
-<p>什么是SOL注入</p>
-<p>产生原因：后台用户提交的带有恶意的数据和SQL进行字符串方式的拼接，从而影响了SQL语句的语义，最终产生数据泄露的现象·如果防止：sql语句的参数化，将SQL语句的所有数据参数存在一个列表中传递给execute函数的二个参数</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">input_name <span class="operator">=</span> input(&quot;请输入要查询的名称:\n&quot;)</span><br><span class="line"># <span class="number">4</span>、使用游标对象执行<span class="keyword">SQL</span>语句</span><br><span class="line"># 被注入过程分析</span><br><span class="line"># input_name <span class="operator">=</span> <span class="string">&#x27; or 1 or &#x27;</span></span><br><span class="line"># &quot;select * from goods where name = &#x27;%s&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># 防止注入：</span><br><span class="line"># <span class="number">1</span>)　构建参数列表params <span class="operator">=</span> input_name</span><br><span class="line"># <span class="number">2</span>) 把列表传递给 excute(<span class="keyword">sql</span>, params)</span><br><span class="line">params <span class="operator">=</span> [input_name]</span><br><span class="line"><span class="keyword">sql</span> <span class="operator">=</span> &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot;  # 这里不知为何参数可以自行替代</span><br><span class="line"># cur.execute(<span class="keyword">SQL</span>语句)　返回值是影响的行数，如果是查询语句，此处返回总记录数</span><br><span class="line"><span class="keyword">result</span> <span class="operator">=</span> cur.execute(<span class="keyword">sql</span>)</span><br><span class="line">print(&quot;查询到%s&quot; <span class="operator">%</span> <span class="keyword">result</span>)</span><br><span class="line"># <span class="number">5</span>、获取执行的结果</span><br><span class="line"># cur.fetchone()从查询结果中取出一条数据。数据库默认升序，此函数会取出第一条数据</span><br><span class="line"># result_list <span class="operator">=</span> cur.fetchone()</span><br><span class="line">result_list <span class="operator">=</span> cur.fetchall()</span><br><span class="line"></span><br><span class="line"># <span class="number">6</span>、打印输出获取的内容</span><br><span class="line"># print(result_list)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> result_list:</span><br><span class="line">    # line即一行数据，是一个元组</span><br><span class="line">    print(line)</span><br><span class="line"></span><br><span class="line"># <span class="number">7</span>、关闭游标对象</span><br><span class="line">cur.close()</span><br><span class="line"># <span class="number">8</span>、关闭连接对象</span><br><span class="line">conn.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>防注入的思路：</p>
-<p>sql中需要变化的地方，可以占位符%s %d…</p>
-<p>把参数封装到列表中</p>
-<p>把列表传递给 execute(sql，列表）</p>
-]]></content>
-      <categories>
-        <category>程序</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Test-2</title>
     <url>/post/b580d7ee/</url>
     <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
@@ -608,6 +519,95 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>本篇文章从二叉查找树，详细说明了为什么 MySQL 用 B+ 树作为数据的索引，以及在 InnoDB 中数据库如何通过 B+ 树索引来存储数据以及查找数据。</p>
 <p>我们一定要记住这句话：数据即索引，索引即数据。<br>
 ![[Recording 20210604075336.webm]]</p>
+]]></content>
+      <categories>
+        <category>程序</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库编程</title>
+    <url>/post/8c5e4b35/</url>
+    <content><![CDATA[<h1>数据库编程</h1>
+<p>从前面我们知道数据库概念包含数据库文件、服务器和数据库客户端客户端我们之前已经用过的有navicat/mysql-client等程序。</p>
+<p>大家会发现如果用之前客户端几乎是不可能完全这个任务的，因为我们不可能去构造出那个插入10w行数据的SQL·可是，如果我们有一个功能能够插入一行数据，借助程序强大的特点-重复，就可以轻而易举的就将10w行数据收入磨下。这种通过使用程序代码的方式去连接数据库服务器，==通过和服务器进行交互完成对数据库的增删改查的方式，就称为数据库编程。==<br>
+而此刻学习的pymysql就是一种客户端。</p>
+<p>使用python代码充当客户端，连接数据库进行操作</p>
+<p>步骤：</p>
+<ul>
+<li>导入模块 pymysql</li>
+<li>建立连接对象 pymysql.connect()</li>
+<li>创建游标对象</li>
+<li>使用游标对象执行SQL语句</li>
+</ul>
+<blockquote>
+<p>cur.execute(&quot;sql语句”）</p>
+<p>execute()有返回值</p>
+<p>1)增删改，影响的行数</p>
+<p>2)查询，总记录数</p>
+</blockquote>
+<ul>
+<li>获取执行的结果</li>
+</ul>
+<blockquote>
+<p>1）取1条cur.fetchone（）#元组</p>
+<p>2）取所有cur.fetchall（）#（(），(），(））</p>
+</blockquote>
+<ul>
+<li>打印输出获取的内容</li>
+</ul>
+<blockquote>
+<p>for line in result_list:<br>
+print(line)</p>
+</blockquote>
+<ul>
+<li>关闭游标对象</li>
+</ul>
+<blockquote>
+<p>cur.close()</p>
+</blockquote>
+<ul>
+<li>关闭连接对象</li>
+</ul>
+<blockquote>
+<p>conn.close()</p>
+</blockquote>
+<p><img src="assets/zyu0-2020-11-07_13-34-18-1604727271305.png" alt="zyu0-2020-11-07_13-34-18"></p>
+<p><img src="assets/zyu0-2020-11-07_13-36-52.png" alt="zyu0-2020-11-07_13-36-52"></p>
+<p><img src="assets/zyu0-2020-11-07_13-43-51.png" alt="zyu0-2020-11-07_13-43-51"></p>
+<p><img src="assets/zyu0-2020-11-07_13-43-13.png" alt="zyu0-2020-11-07_13-43-13"></p>
+<h2 id="Python操作数据库CURD">Python操作数据库CURD</h2>
+<p>操作步骤：</p>
+<ul>
+<li>导入模块</li>
+<li>创建连接对象</li>
+<li>创建游标对象。</li>
+<li>使用游标对象执行SQL</li>
+</ul>
+<blockquote>
+<p>execute()</p>
+</blockquote>
+<ul>
+<li>提交</li>
+</ul>
+<blockquote>
+<p>conn.commit()</p>
+</blockquote>
+<ul>
+<li>获取执行的结果（影响的行数）并打印执行的结果</li>
+<li>关闭游标</li>
+<li>关闭连接</li>
+</ul>
+<h1>SQL防注入</h1>
+<p>什么是SOL注入</p>
+<p>产生原因：后台用户提交的带有恶意的数据和SQL进行字符串方式的拼接，从而影响了SQL语句的语义，最终产生数据泄露的现象·如果防止：sql语句的参数化，将SQL语句的所有数据参数存在一个列表中传递给execute函数的二个参数</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">input_name <span class="operator">=</span> input(&quot;请输入要查询的名称:\n&quot;)</span><br><span class="line"># <span class="number">4</span>、使用游标对象执行<span class="keyword">SQL</span>语句</span><br><span class="line"># 被注入过程分析</span><br><span class="line"># input_name <span class="operator">=</span> <span class="string">&#x27; or 1 or &#x27;</span></span><br><span class="line"># &quot;select * from goods where name = &#x27;%s&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot; <span class="operator">%</span> input_name</span><br><span class="line"># 防止注入：</span><br><span class="line"># <span class="number">1</span>)　构建参数列表params <span class="operator">=</span> input_name</span><br><span class="line"># <span class="number">2</span>) 把列表传递给 excute(<span class="keyword">sql</span>, params)</span><br><span class="line">params <span class="operator">=</span> [input_name]</span><br><span class="line"><span class="keyword">sql</span> <span class="operator">=</span> &quot;select * from goods where name = &#x27;&#x27; or 1 or &#x27;&#x27; order by id desc&quot;  # 这里不知为何参数可以自行替代</span><br><span class="line"># cur.execute(<span class="keyword">SQL</span>语句)　返回值是影响的行数，如果是查询语句，此处返回总记录数</span><br><span class="line"><span class="keyword">result</span> <span class="operator">=</span> cur.execute(<span class="keyword">sql</span>)</span><br><span class="line">print(&quot;查询到%s&quot; <span class="operator">%</span> <span class="keyword">result</span>)</span><br><span class="line"># <span class="number">5</span>、获取执行的结果</span><br><span class="line"># cur.fetchone()从查询结果中取出一条数据。数据库默认升序，此函数会取出第一条数据</span><br><span class="line"># result_list <span class="operator">=</span> cur.fetchone()</span><br><span class="line">result_list <span class="operator">=</span> cur.fetchall()</span><br><span class="line"></span><br><span class="line"># <span class="number">6</span>、打印输出获取的内容</span><br><span class="line"># print(result_list)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> result_list:</span><br><span class="line">    # line即一行数据，是一个元组</span><br><span class="line">    print(line)</span><br><span class="line"></span><br><span class="line"># <span class="number">7</span>、关闭游标对象</span><br><span class="line">cur.close()</span><br><span class="line"># <span class="number">8</span>、关闭连接对象</span><br><span class="line">conn.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>防注入的思路：</p>
+<p>sql中需要变化的地方，可以占位符%s %d…</p>
+<p>把参数封装到列表中</p>
+<p>把列表传递给 execute(sql，列表）</p>
 ]]></content>
       <categories>
         <category>程序</category>
