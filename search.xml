@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test-2</title>
-    <url>/post/b580d7ee/</url>
-    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
-<a href="#">Post not found: test</a>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-  </entry>
-  <entry>
     <title>test</title>
     <url>/post/dc4c1419/</url>
     <content><![CDATA[<h1>xxx</h1>
@@ -188,6 +178,9 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>如果不想随机跳转到某篇文章，只需在这篇文章Front-matter添加random: false</p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
   </entry>
   <entry>
     <title>字体设置</title>
@@ -537,6 +530,24 @@ print(line)</p>
       <tags>
         <tag>code</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/post/0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Test-2</title>
+    <url>/post/b580d7ee/</url>
+    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
+<a href="#">Post not found: test</a>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
   </entry>
   <entry>
     <title>代码测试</title>

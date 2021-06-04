@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>https://tazyu.xyz/galleryGroup/index.html</loc>
-    
-    <lastmod>2021-06-04</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tazyu.xyz/link/index.html</loc>
     
     <lastmod>2021-06-04</lastmod>
@@ -30,6 +23,13 @@
   </url>
   
   <url>
+    <loc>https://tazyu.xyz/%E6%96%87%E7%AB%A0%E7%BB%9F%E8%AE%A1/index.html</loc>
+    
+    <lastmod>2021-06-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tazyu.xyz/%E8%BF%BD%E7%95%AA/index.html</loc>
     
     <lastmod>2021-06-04</lastmod>
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://tazyu.xyz/img/siteicon/favicon_package_v0.16_2/README.html</loc>
+    <loc>https://tazyu.xyz/galleryGroup/index.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tazyu.xyz/post/b580d7ee/</loc>
+    <loc>https://tazyu.xyz/img/siteicon/favicon_package_v0.16_2/README.html</loc>
     
     <lastmod>2021-06-04</lastmod>
     
@@ -162,6 +162,20 @@
     
   </url>
   
+  <url>
+    <loc>https://tazyu.xyz/post/0/</loc>
+    
+    <lastmod>2021-06-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tazyu.xyz/post/b580d7ee/</loc>
+    
+    <lastmod>2021-06-04</lastmod>
+    
+  </url>
+  
 
   <url>
     <loc>https://tazyu.xyz/</loc>
@@ -228,6 +242,13 @@
   </url>
   
 
+  
+  <url>
+    <loc>https://tazyu.xyz/categories/%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2021-06-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>https://tazyu.xyz/categories/test/</loc>
