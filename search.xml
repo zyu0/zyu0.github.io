@@ -213,6 +213,8 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>零奇部落阁-毛玻璃效果<a class="btn-beautify button--animated outline larger" href="https://www.zyskys.com/posts/1ee3" 
   title="零奇部落阁"><i class="far fa-hand-point-right"></i><span>零奇部落阁</span></a></p>
 </div></div>
+<p>GodLin’s Blog-backdrop-filter毛玻璃效果<a class="btn-beautify button--animated outline larger" href="https://www.crushing.xyz/posts/317c.html" 
+  title="GodLin's Blog"><i class="far fa-hand-point-right"></i><span>GodLin's Blog</span></a></p>
 <p>使用工具<a class="btn-beautify button--animated purple larger" href="https://glassmorphism.com/" 
   title="glassmorphism"><i class="far fa-hand-point-right"></i><span>glassmorphism</span></a></p>
 <h2 id="具体操作">具体操作</h2>
@@ -222,14 +224,26 @@ This is my website, click the button <a class="btn-beautify button--animated lar
   title="糖果屋"><span>糖果屋</span></a>，部分从以下路径查找<code>Blogroot\themes\butterfly\layout\includes</code></p>
 <p>例如需要侧边栏的分类卡片区域</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603194836108.png" alt="image-20210603194836108"></p>
-<p>就在<code>Blogroot\themes\butterfly\layout\includes\\widget\</code>下的<code>card_categories.pug</code>文件中，具体名为<code>.card-widget.card-categories</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603194721595.png" alt="image-20210603194721595"></p>
+<p>在浏览器中按F12打开开发者工具，点击选取工具</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604125148723.png" alt="image-20210604125148723"></p>
+<p>选择分类卡片外边框，得到其名称</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604125314649.png" alt="image-20210604125314649"></p>
+<p>将获得的名称填入<code>custom.css</code>中</p>
+<p>这里会碰到一个问题，大部分区域按以上获得的名称是可以直接使用的，但此处的侧边栏卡片多数好还需要修改下图中的文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604125848807.png" alt="image-20210604125848807"></p>
+<p>将红框处修改为<code>.card-widget#card-categories</code>保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604130035639.png" alt="image-20210604130035639"></p>
+<p>可看到毛玻璃效果正常显示的区域，名称格式是这样的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604130433670.png" alt="image-20210604130433670"></p>
+<p>所以在<code>custom.css</code>中分类卡片代码写为</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604130520407.png" alt="image-20210604130520407"></p>
 <p>打开<a class="btn-beautify button--animated " href="https://glassmorphism.com/" 
-  title="glassmorphism"><i class="far fa-hand-point-right"></i><span>glassmorphism</span></a>工具</p>
+  title="glassmorphism"><i class="far fa-hand-point-right"></i><span>glassmorphism</span></a>工具，复制调好效果的代码</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210603195215937.png" alt="image-20210603195215937"></p>
-<ul>
-<li>打开custom.css文件，</li>
-</ul>
+<p>打开custom.css文件，粘贴到{}之间</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604125653783.png" alt="image-20210604125653783"></p>
+<p><code>hexo s </code>在本地查看效果，可看到已经达到毛玻璃效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604130718726.png" alt="image-20210604130718726"></p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
