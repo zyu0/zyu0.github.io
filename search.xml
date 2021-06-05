@@ -169,6 +169,15 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       </tags>
   </entry>
   <entry>
+    <title>niconico</title>
+    <url>/post/0/</url>
+    <content><![CDATA[<h1>niconico</h1>
+]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+  </entry>
+  <entry>
     <title>npm图床设置和问题</title>
     <url>/post/28daef73/</url>
     <content><![CDATA[<h2 id="基于店长Akilar的方法设置npm">基于店长Akilar的方法设置npm</h2>
