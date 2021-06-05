@@ -319,7 +319,7 @@ This is my website, click the button <a class="btn-beautify button--animated lar
     <url>/post/28f332e5/</url>
     <content><![CDATA[<h2 id="Front-matter写法">Front-matter写法</h2>
 <p>每个单词后冒号必须是英文，且冒号后必须有一个空格<br>
-记得每次写新文章，要把date填上时间，否则文章会不断的显示为最新时间</p>
+记得每次写新文章，要把date填上时间，否则文章会不断的显示为最新时间，更新文章是尽量写update吧</p>
 <h2 id="PWA和网站提示更新">PWA和网站提示更新</h2>
 <p>pwa的实质其实是惰性加载。你看到的提示更新是为了应对这种惰性加载的手段，通过监测站点内容是否变动，弹窗提示你更新</p>
 <h2 id="本地重新配置主题颜色和背景图没变化">本地重新配置主题颜色和背景图没变化</h2>
