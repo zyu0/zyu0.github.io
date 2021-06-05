@@ -23,7 +23,7 @@ h1#site-title {
 
 /* 毛玻璃效果*/
 #recent-posts > .recent-post-item {
-    background: rgba( 255, 255, 255, 0.5 );
+    background: rgba( 255, 255, 255, 0.55 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 5.5px );
     -webkit-backdrop-filter: blur( 5.5px );
@@ -33,7 +33,7 @@ h1#site-title {
 
 /* 首页侧栏卡片 */
 .card-widget{
-    background:rgba(255, 255, 255, 0.6)!important;
+    background:rgba(255, 255, 255, 0.7)!important;
   }
 /* div#card-newest-comments.card-widget{
     background: rgba( 255, 255, 255, 0.60 );
@@ -92,11 +92,11 @@ div#card-webinfo.card-widget{
 
 /* 文章页面正文背景 */
 div#post{
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
 }
 /* 分页页面 */
 div#page{
-    background: rgba( 255, 255, 255, 0.50 );
+    background: rgba( 255, 255, 255, 0.6 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 5.5px );
     -webkit-backdrop-filter: blur( 5.5px );
@@ -105,7 +105,7 @@ div#page{
 }
 /* 归档页面 */
 div#archive{
-    background: rgba( 255, 255, 255, 0.50 );
+    background: rgba( 255, 255, 255, 0.6 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 5.5px );
     -webkit-backdrop-filter: blur( 5.5px );
@@ -114,7 +114,7 @@ div#archive{
 }
 /* 标签页面 */
 div#tag{
-    background: rgba( 255, 255, 255, 0.50 );
+    background: rgba( 255, 255, 255, 0.6 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 5.5px );
     -webkit-backdrop-filter: blur( 5.5px );
@@ -123,7 +123,7 @@ div#tag{
 }
 /* 分类页面 */
 div#category{
-    background: rgba( 255, 255, 255, 0.50 );
+    background: rgba( 255, 255, 255, 0.6 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 5.5px );
     -webkit-backdrop-filter: blur( 5.5px );
