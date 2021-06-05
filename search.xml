@@ -178,23 +178,6 @@ This is my website, click the button <a class="btn-beautify button--animated lar
       </categories>
   </entry>
   <entry>
-    <title>npm图床设置和问题</title>
-    <url>/post/28daef73/</url>
-    <content><![CDATA[<h2 id="基于店长Akilar的方法设置npm">基于店长Akilar的方法设置npm</h2>
-<p>糖果屋跳转 <a class="btn-beautify button--animated larger" href="https://akilar.top/posts/3e956346/" 
-  title="糖果屋"><i class="far fa-hand-point-right"></i><span>糖果屋</span></a></p>
-<h2 id="问题">问题</h2>
-<p>npm图床用github action发布，平时action需要关闭的，因为每次更新npm都得改版本号，否则每次上传图片导致master变动，action都会执行发布，在需要的时候打开发布一次即可</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客美化与功能添加</title>
     <url>/post/c66d090/</url>
     <content><![CDATA[<h2 id="高级配置">高级配置</h2>
@@ -650,6 +633,23 @@ print(line)</p>
       </categories>
       <tags>
         <tag>zzz</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>npm图床设置和问题</title>
+    <url>/post/28daef73/</url>
+    <content><![CDATA[<h2 id="基于店长Akilar的方法设置npm">基于店长Akilar的方法设置npm</h2>
+<p>糖果屋跳转 <a class="btn-beautify button--animated larger" href="https://akilar.top/posts/3e956346/" 
+  title="糖果屋"><i class="far fa-hand-point-right"></i><span>糖果屋</span></a></p>
+<h2 id="问题">问题</h2>
+<p>npm图床用github action发布，平时action需要关闭的，因为每次更新npm都得改版本号，否则每次上传图片导致master变动，action都会执行发布，在需要的时候打开发布一次即可</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
