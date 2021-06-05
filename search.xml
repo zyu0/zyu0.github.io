@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test-2</title>
-    <url>/post/b580d7ee/</url>
-    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
-<a href="#">Post not found: test</a>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-  </entry>
-  <entry>
     <title>test</title>
     <url>/post/dc4c1419/</url>
     <content><![CDATA[<h1>xxx</h1>
@@ -305,18 +295,14 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>就这两个区域失败了，经过试验，侧边栏这边因为技术限制，不建议做毛玻璃，需要半透明就直接改.card-widget透明度即可，效果比毛玻璃更好</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604141108743.png" alt="image-20210604141108743"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604141120184.png" alt="image-20210604141120184"></p>
-<p>据店长解释：</p>
-<p>毛玻璃是用来filter滤镜属性的blur效果</p>
-<p>filter会破坏堆叠样式结构。导致它的子元素的各种display属性和position属性失效</p>
-<p>因为它本身就是在其他堆叠样式之后才添加的css属性，兼容前面的已经弃用的样式是多余的</p>
-<p>css恶心在官方的说法是弃用旧版的css属性的。但是浏览器还执着的支持这旧版的已经弃用的css属性</p>
-<p>导致的情况就是开发者宁愿继续用旧版。因为新版想要全兼容，要付出更多精力</p>
+<p>问题所在：</p>
+<p>毛玻璃是用来filter滤镜属性的blur效果，而filter会破坏堆叠样式结构。导致它的子元素的各种display属性和position属性失效。因为其本身就是在其他堆叠样式之后才添加的css属性，兼容前面的已经弃用的样式是多余的</p>
+<p>css按照官方的说法是弃用了旧版的css属性，但是浏览器还在支持这旧版已经弃用的css属性</p>
 <h3 id="解决方式">解决方式</h3>
-<p>继续毛玻璃方案暂时做不到了，但可以直接改透明度，采用店长提供的方案</p>
+<p>继续毛玻璃方案暂时做不到了，但可以直接改透明度</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card-widget</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.9</span>)<span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>最终效果很令人满意，在半透明基础上还有了差异化，十分和谐</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210604142021137.png" alt="image-20210604142021137"></p>
-<p><a href="https://python-github-calendar-api-4838lzuhs-zyu0.vercel.app">https://python-github-calendar-api-4838lzuhs-zyu0.vercel.app</a></p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -630,6 +616,16 @@ print(line)</p>
       <tags>
         <tag>code</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Test-2</title>
+    <url>/post/b580d7ee/</url>
+    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
+<a href="#">Post not found: test</a>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
   </entry>
   <entry>
     <title>代码测试</title>
