@@ -119,6 +119,14 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <blockquote>
 <p>上面方式也有一个问题，就是图片在github查找时排序不是按上传时间排列的，而是按名字排序，会导致从时间顺序查找不方便，方法还需要斟酌。</p>
 </blockquote>
+<h2 id="间歇性上传失败">间歇性上传失败</h2>
+<p>之前成功上传过，突然就不能上传了，显示端口失效等问题</p>
+<p>打开PicGo的<strong>设置-设置server</strong></p>
+<p><img src="https://raw.githubusercontent.com/talesov/picbed/master/img/20200222203320.png" alt=""></p>
+<p>把这个开关，开换成关，关换成开，原因未知</p>
+<p><img src="https://raw.githubusercontent.com/talesov/picbed/master/img/20200222203337.png" alt=""></p>
+<h2 id="上传后未返回url">上传后未返回url</h2>
+<p>看看是不是上一张图片还没传完返回，就开始传下一张了</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -339,6 +347,9 @@ This is my website, click the button <a class="btn-beautify button--animated lar
 <p>【店长】Akilar 14:05:32<br>
 那可能是权值不一样。在样式后面加 !important 强调权值</p>
 </blockquote>
+<h2 id="使用artstation的图片问题">使用artstation的图片问题</h2>
+<p>最好不要直接拿artstation或者其他国外无法直接访问的图片链接，否则因为国内网络问题，会访问失败，表现为网站背景一片白色</p>
+<p>将其图片下载，传到github图床中，用ImgBot压缩下即可</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
