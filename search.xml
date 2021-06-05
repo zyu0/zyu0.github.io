@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Test-2</title>
+    <url>/post/b580d7ee/</url>
+    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
+<a href="#">Post not found: test</a>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+  </entry>
+  <entry>
     <title>test</title>
     <url>/post/dc4c1419/</url>
     <content><![CDATA[<h1>xxx</h1>
@@ -616,16 +626,6 @@ print(line)</p>
       <tags>
         <tag>code</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Test-2</title>
-    <url>/post/b580d7ee/</url>
-    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
-<a href="#">Post not found: test</a>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
   </entry>
   <entry>
     <title>代码测试</title>
