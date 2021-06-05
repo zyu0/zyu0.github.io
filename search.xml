@@ -1,191 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Test-2</title>
-    <url>/post/b580d7ee/</url>
-    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
-<a href="#">Post not found: test</a>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/post/dc4c1419/</url>
-    <content><![CDATA[<h1>xxx</h1>
-<h2 id="相对路径显示图片">相对路径显示图片</h2>
-<p>已放弃，改为图床</p>
-<p><img src="test/photo.png" alt="photo"></p>
-<div class="hide-toggle" ><div class="hide-button toggle-title" style=""><i class="fas fa-caret-right fa-fw"></i><span>Butterfly安装方法</span></div>
-    <div class="hide-content"><p>在你的博客根目录里</p>
-<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
-<p>如果想要安装比较新的dev分支，可以</p>
-<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
-</div></div>
-<h2 id="mermaid">mermaid</h2>
-<div class="mermaid">pie
-    title Key elements in Product X
-    &quot;Calcium&quot; : 42.96
-    &quot;Potassium&quot; : 50.05
-    &quot;Magnesium&quot; : 10.01
-    &quot;Iron&quot; :  5</div>
-<h2 id="tabs">tabs</h2>
-<div class="tabs" id="nico"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#nico-1">nico 1</button></li><li class="tab"><button type="button" data-href="#nico-2">nico 2</button></li><li class="tab"><button type="button" data-href="#nico-3">nico 3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="nico-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="nico-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="nico-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<div class="tabs" id="test2"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test2-1">test2 1</button></li><li class="tab"><button type="button" data-href="#test2-2">test2 2</button></li><li class="tab active"><button type="button" data-href="#test2-3">test2 3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test2-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test2-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="test2-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<div class="tabs" id="test3"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test3-1">test3 1</button></li><li class="tab"><button type="button" data-href="#test3-2">test3 2</button></li><li class="tab"><button type="button" data-href="#test3-3">test3 3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test3-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test4-1">第一个Tab</button></li><li class="tab"><button type="button" data-href="#test4-2"><i class="fab fa-apple-pay" style="text-align: center;"></i></button></li><li class="tab"><button type="button" data-href="#test4-3"><i class="fas fa-bomb"></i>炸弹</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test4-1"><p><strong>tab名字为第一个Tab</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><strong>只有图标 没有Tab名字</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-3"><p><strong>名字+icon</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="button">button</h2>
-<p>This is my website, click the button <a class="btn-beautify button--animated " href="https://butterfly.js.org/" 
-  title="Butterfly"><span>Butterfly</span></a><br>
-This is my website, click the button <a class="btn-beautify button--animated " href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a><br>
-This is my website, click the button <a class="btn-beautify button--animated outline" href="https://butterfly.js.org/" 
-  title="Butterfly"><span>Butterfly</span></a><br>
-This is my website, click the button <a class="btn-beautify button--animated outline" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a><br>
-This is my website, click the button <a class="btn-beautify button--animated larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a></p>
-<a class="btn-beautify button--animated larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated blue larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated pink larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated red larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated purple larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated orange larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated green larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<div class="btn-center">
-<a class="btn-beautify button--animated outline larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated outline blue larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated outline pink larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated outline red larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated outline purple larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated outline orange larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-<a class="btn-beautify button--animated outline green larger" href="https://butterfly.js.org/" 
-  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
-</div>
-## inlineImg
-<p>你看我长得漂亮不</p>
-<p><img src="https://i.loli.net/2021/03/19/2P6ivUGsdaEXSFI.png" alt=""></p>
-<p>我觉得很漂亮 <img class="inline-img" src="https://i.loli.net/2021/03/19/5M4jUB3ynq7ePgw.png" style="height:150px"/></p>
-<h2 id="label">label</h2>
-<p>臣亮言：<mark class="hl-label default">先帝</mark> 创业未半，而<mark class="hl-label blue">中道崩殂</mark> 。今天下三分，<mark class="hl-label pink">益州疲敝</mark> ，此诚<mark class="hl-label red">危急存亡之秋</mark> 也！然侍衞之臣，不懈于内；<mark class="hl-label purple">忠志之士</mark> ，忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气；不宜妄自菲薄，引喻失义，以塞忠谏之路也。<br>
-宫中、府中，俱为一体；陟罚臧否，不宜异同。若有<mark class="hl-label orange">作奸</mark> 、<mark class="hl-label green">犯科</mark> ，及为忠善者，宜付有司，论其刑赏，以昭陛下平明之治；不宜偏私，使内外异法也。</p>
-<h2 id="测试图片功能">测试图片功能</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssetsPicx@master/20210605/guillaume-neumann-labirynthe.50n63swl74g0.jpg" alt="guillaume-neumann-labirynthe"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets@master/lou-ll-maids-take-off-shoes-40.3yuzk8znmpm0.jpg" alt="lou-ll-maids-take-off-shoes-40"></p>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>PicGo探索</title>
-    <url>/post/38f64154/</url>
-    <content><![CDATA[<h2 id="上传后删除测试">上传后删除测试</h2>
-<p>更新：</p>
-<ul>
-<li>Akilar店长：从仓库删去到github的缓存被清空是有一段缓冲期的。这期间你确实还有可能访问到被删除的图片。另一种可能是你是通过发布release的，那样的话你的图片还存在release里。删除当前仓库的图片不会对已经发布的release造成任何影响。</li>
-<li>失效时间等待：大概10小时左右失效</li>
-</ul>
-<blockquote>
-<p>原文章内容：可证明的是当图片上传至github后，即使在github中删除，这里的url同样有效，原因还未知</p>
-<p>如以下这两张图片，搜索链接还能找到</p>
-</blockquote>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">empty_gallery</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg" alt="empty_gallery"></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">hayward-gallery-50th-anniversary-03</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg" alt="hayward-gallery-50th-anniversary-03"></p>
-<h2 id="同名上传测试">同名上传测试</h2>
-<p>当上传至一个文件夹下时PicGo会报错，上传失败</p>
-<ul>
-<li>希望以后能覆盖上传</li>
-</ul>
-<p>切换上传文件夹后可行，如以下两张图片</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
-<p>经测试，我更喜欢按写文章的日期切换上传文件夹，这样在github中整理的更清晰，文件PicGo提供了时间戳重命名功能，但我觉得那个看着实在不明确，当图片有问题去github查找太难了，保留图片名字的差异化最好。虽然PicGo也提供了上传前手动重命名的选项，但太麻烦，不够优雅</p>
-<blockquote>
-<p>上面方式也有一个问题，就是图片在github查找时排序不是按上传时间排列的，而是按名字排序，会导致从时间顺序查找不方便，方法还需要斟酌。</p>
-</blockquote>
-<h2 id="间歇性上传失败">间歇性上传失败</h2>
-<p>之前成功上传过，突然就不能上传了，显示端口失效等问题</p>
-<p>打开PicGo的<strong>设置-设置server</strong></p>
-<p><img src="https://raw.githubusercontent.com/talesov/picbed/master/img/20200222203320.png" alt=""></p>
-<p>把这个开关，开换成关，关换成开，原因未知</p>
-<p><img src="https://raw.githubusercontent.com/talesov/picbed/master/img/20200222203337.png" alt=""></p>
-<h2 id="上传后未返回url">上传后未返回url</h2>
-<p>看看是不是上一张图片还没传完返回，就开始传下一张了</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo-auto-category插件问题</title>
-    <url>/post/c8b7dc96/</url>
-    <content><![CDATA[<h2 id="2021-6-2存在问题">2021.6.2存在问题</h2>
-<p>在6月2号的四天前刚刚修复了<code>err: TypeError: tmpPost.categories.join is not a function </code>的问题</p>
-<p>具体原因是在front matter时，categories需要特定的格式，如下，不能写成<code>categories: 空页面</code></p>
-<ul>
-<li>单层级文件夹如下</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
-<ul>
-<li>多层级文件夹如下</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
-<h3 id="多重分类失效">多重分类失效</h3>
-<p>手动分类测试：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> [空页面]</span><br><span class="line"><span class="bullet">  -</span> [code]</span><br></pre></td></tr></table></figure>
-<p>插件会自动替换原来手动写好的分类，按文件夹层级重写</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
-<p>网站界面一直保持如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210602192639352.png" alt="image-20210602192639352"></p>
-<p>对于想要多重分类标记的文章，建议使用标签，标签格式相同，但不存在这个层级问题，具体可查看<a href="https://hexo.io/zh-cn/docs/front-matter">Hexo文档</a></p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>npm图床设置和问题</title>
-    <url>/post/28daef73/</url>
-    <content><![CDATA[<h2 id="基于店长Akilar的方法设置npm">基于店长Akilar的方法设置npm</h2>
-<p>糖果屋跳转 <a class="btn-beautify button--animated larger" href="https://akilar.top/posts/3e956346/" 
-  title="糖果屋"><i class="far fa-hand-point-right"></i><span>糖果屋</span></a></p>
-<h2 id="问题">问题</h2>
-<p>npm图床用github action发布，平时action需要关闭的，因为每次更新npm都得改版本号，否则每次上传图片导致master变动，action都会执行发布，在需要的时候打开发布一次即可</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客美化与功能添加</title>
     <url>/post/c66d090/</url>
     <content><![CDATA[<h2 id="高级配置">高级配置</h2>
@@ -629,6 +444,191 @@ print(line)</p>
       </categories>
       <tags>
         <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Test-2</title>
+    <url>/post/b580d7ee/</url>
+    <content><![CDATA[<h2 id="引用站内其他文章">引用站内其他文章</h2>
+<a href="#">Post not found: test</a>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/post/dc4c1419/</url>
+    <content><![CDATA[<h1>xxx</h1>
+<h2 id="相对路径显示图片">相对路径显示图片</h2>
+<p>已放弃，改为图床</p>
+<p><img src="test/photo.png" alt="photo"></p>
+<div class="hide-toggle" ><div class="hide-button toggle-title" style=""><i class="fas fa-caret-right fa-fw"></i><span>Butterfly安装方法</span></div>
+    <div class="hide-content"><p>在你的博客根目录里</p>
+<p>git clone -b master <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
+<p>如果想要安装比较新的dev分支，可以</p>
+<p>git clone -b dev <a href="https://github.com/jerryc127/hexo-theme-butterfly.git">https://github.com/jerryc127/hexo-theme-butterfly.git</a> themes/Butterfly</p>
+</div></div>
+<h2 id="mermaid">mermaid</h2>
+<div class="mermaid">pie
+    title Key elements in Product X
+    &quot;Calcium&quot; : 42.96
+    &quot;Potassium&quot; : 50.05
+    &quot;Magnesium&quot; : 10.01
+    &quot;Iron&quot; :  5</div>
+<h2 id="tabs">tabs</h2>
+<div class="tabs" id="nico"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#nico-1">nico 1</button></li><li class="tab"><button type="button" data-href="#nico-2">nico 2</button></li><li class="tab"><button type="button" data-href="#nico-3">nico 3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="nico-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="nico-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="nico-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<div class="tabs" id="test2"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test2-1">test2 1</button></li><li class="tab"><button type="button" data-href="#test2-2">test2 2</button></li><li class="tab active"><button type="button" data-href="#test2-3">test2 3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test2-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test2-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content active" id="test2-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<div class="tabs" id="test3"><ul class="nav-tabs"><li class="tab"><button type="button" data-href="#test3-1">test3 1</button></li><li class="tab"><button type="button" data-href="#test3-2">test3 2</button></li><li class="tab"><button type="button" data-href="#test3-3">test3 3</button></li></ul><div class="tab-contents"><div class="tab-item-content" id="test3-1"><p><strong>This is Tab 1.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-2"><p><strong>This is Tab 2.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test3-3"><p><strong>This is Tab 3.</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<div class="tabs" id="test4"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#test4-1">第一个Tab</button></li><li class="tab"><button type="button" data-href="#test4-2"><i class="fab fa-apple-pay" style="text-align: center;"></i></button></li><li class="tab"><button type="button" data-href="#test4-3"><i class="fas fa-bomb"></i>炸弹</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="test4-1"><p><strong>tab名字为第一个Tab</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-2"><p><strong>只有图标 没有Tab名字</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="test4-3"><p><strong>名字+icon</strong></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h2 id="button">button</h2>
+<p>This is my website, click the button <a class="btn-beautify button--animated " href="https://butterfly.js.org/" 
+  title="Butterfly"><span>Butterfly</span></a><br>
+This is my website, click the button <a class="btn-beautify button--animated " href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a><br>
+This is my website, click the button <a class="btn-beautify button--animated outline" href="https://butterfly.js.org/" 
+  title="Butterfly"><span>Butterfly</span></a><br>
+This is my website, click the button <a class="btn-beautify button--animated outline" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a><br>
+This is my website, click the button <a class="btn-beautify button--animated larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a></p>
+<a class="btn-beautify button--animated larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated blue larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated pink larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated red larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated purple larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated orange larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated green larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<div class="btn-center">
+<a class="btn-beautify button--animated outline larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated outline blue larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated outline pink larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated outline red larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated outline purple larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated outline orange larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+<a class="btn-beautify button--animated outline green larger" href="https://butterfly.js.org/" 
+  title="Butterfly"><i class="far fa-hand-point-right"></i><span>Butterfly</span></a>
+</div>
+## inlineImg
+<p>你看我长得漂亮不</p>
+<p><img src="https://i.loli.net/2021/03/19/2P6ivUGsdaEXSFI.png" alt=""></p>
+<p>我觉得很漂亮 <img class="inline-img" src="https://i.loli.net/2021/03/19/5M4jUB3ynq7ePgw.png" style="height:150px"/></p>
+<h2 id="label">label</h2>
+<p>臣亮言：<mark class="hl-label default">先帝</mark> 创业未半，而<mark class="hl-label blue">中道崩殂</mark> 。今天下三分，<mark class="hl-label pink">益州疲敝</mark> ，此诚<mark class="hl-label red">危急存亡之秋</mark> 也！然侍衞之臣，不懈于内；<mark class="hl-label purple">忠志之士</mark> ，忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气；不宜妄自菲薄，引喻失义，以塞忠谏之路也。<br>
+宫中、府中，俱为一体；陟罚臧否，不宜异同。若有<mark class="hl-label orange">作奸</mark> 、<mark class="hl-label green">犯科</mark> ，及为忠善者，宜付有司，论其刑赏，以昭陛下平明之治；不宜偏私，使内外异法也。</p>
+<h2 id="测试图片功能">测试图片功能</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssetsPicx@master/20210605/guillaume-neumann-labirynthe.50n63swl74g0.jpg" alt="guillaume-neumann-labirynthe"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets@master/lou-ll-maids-take-off-shoes-40.3yuzk8znmpm0.jpg" alt="lou-ll-maids-take-off-shoes-40"></p>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>PicGo探索</title>
+    <url>/post/38f64154/</url>
+    <content><![CDATA[<h2 id="上传后删除测试">上传后删除测试</h2>
+<p>更新：</p>
+<ul>
+<li>Akilar店长：从仓库删去到github的缓存被清空是有一段缓冲期的。这期间你确实还有可能访问到被删除的图片。另一种可能是你是通过发布release的，那样的话你的图片还存在release里。删除当前仓库的图片不会对已经发布的release造成任何影响。</li>
+<li>失效时间等待：大概10小时左右失效</li>
+</ul>
+<blockquote>
+<p>原文章内容：可证明的是当图片上传至github后，即使在github中删除，这里的url同样有效，原因还未知</p>
+<p>如以下这两张图片，搜索链接还能找到</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">empty_gallery</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043808.jpeg" alt="empty_gallery"></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">hayward-gallery-50th-anniversary-03</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/20210602043813.jpg" alt="hayward-gallery-50th-anniversary-03"></p>
+<h2 id="同名上传测试">同名上传测试</h2>
+<p>当上传至一个文件夹下时PicGo会报错，上传失败</p>
+<ul>
+<li>希望以后能覆盖上传</li>
+</ul>
+<p>切换上传文件夹后可行，如以下两张图片</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">Snipaste_2021-05-28_20-06-34</span>](<span class="link">https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/img/Snipaste_2021-05-28_20-06-34.png" alt="Snipaste_2021-05-28_20-06-34"></p>
+<p>经测试，我更喜欢按写文章的日期切换上传文件夹，这样在github中整理的更清晰，文件PicGo提供了时间戳重命名功能，但我觉得那个看着实在不明确，当图片有问题去github查找太难了，保留图片名字的差异化最好。虽然PicGo也提供了上传前手动重命名的选项，但太麻烦，不够优雅</p>
+<blockquote>
+<p>上面方式也有一个问题，就是图片在github查找时排序不是按上传时间排列的，而是按名字排序，会导致从时间顺序查找不方便，方法还需要斟酌。</p>
+</blockquote>
+<h2 id="间歇性上传失败">间歇性上传失败</h2>
+<p>之前成功上传过，突然就不能上传了，显示端口失效等问题</p>
+<p>打开PicGo的<strong>设置-设置server</strong></p>
+<p><img src="https://raw.githubusercontent.com/talesov/picbed/master/img/20200222203320.png" alt=""></p>
+<p>把这个开关，开换成关，关换成开，原因未知</p>
+<p><img src="https://raw.githubusercontent.com/talesov/picbed/master/img/20200222203337.png" alt=""></p>
+<h2 id="上传后未返回url">上传后未返回url</h2>
+<p>看看是不是上一张图片还没传完返回，就开始传下一张了</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-auto-category插件问题</title>
+    <url>/post/c8b7dc96/</url>
+    <content><![CDATA[<h2 id="2021-6-2存在问题">2021.6.2存在问题</h2>
+<p>在6月2号的四天前刚刚修复了<code>err: TypeError: tmpPost.categories.join is not a function </code>的问题</p>
+<p>具体原因是在front matter时，categories需要特定的格式，如下，不能写成<code>categories: 空页面</code></p>
+<ul>
+<li>单层级文件夹如下</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
+<ul>
+<li>多层级文件夹如下</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
+<h3 id="多重分类失效">多重分类失效</h3>
+<p>手动分类测试：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> [空页面]</span><br><span class="line"><span class="bullet">  -</span> [code]</span><br></pre></td></tr></table></figure>
+<p>插件会自动替换原来手动写好的分类，按文件夹层级重写</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">title: 空页面-1</span><br><span class="line">tags: 空页面</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> test</span><br><span class="line"><span class="bullet">  -</span> 空页面</span><br></pre></td></tr></table></figure>
+<p>网站界面一直保持如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zyu0/BlogAssets/2021-6-2/image-20210602192639352.png" alt="image-20210602192639352"></p>
+<p>对于想要多重分类标记的文章，建议使用标签，标签格式相同，但不存在这个层级问题，具体可查看<a href="https://hexo.io/zh-cn/docs/front-matter">Hexo文档</a></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>npm图床设置和问题</title>
+    <url>/post/28daef73/</url>
+    <content><![CDATA[<h2 id="基于店长Akilar的方法设置npm">基于店长Akilar的方法设置npm</h2>
+<p>糖果屋跳转 <a class="btn-beautify button--animated larger" href="https://akilar.top/posts/3e956346/" 
+  title="糖果屋"><i class="far fa-hand-point-right"></i><span>糖果屋</span></a></p>
+<h2 id="问题">问题</h2>
+<p>npm图床用github action发布，平时action需要关闭的，因为每次更新npm都得改版本号，否则每次上传图片导致master变动，action都会执行发布，在需要的时候打开发布一次即可</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
