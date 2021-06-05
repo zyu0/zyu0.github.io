@@ -2,41 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tazyu.xyz/manifest.json</loc>
-    
-    <lastmod>2021-06-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tazyu.xyz/link/index.html</loc>
-    
-    <lastmod>2021-06-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tazyu.xyz/tags/index.html</loc>
-    
-    <lastmod>2021-06-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tazyu.xyz/post/b580d7ee/</loc>
-    
-    <lastmod>2021-06-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tazyu.xyz/post/dc4c1419/</loc>
-    
-    <lastmod>2021-06-05</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tazyu.xyz/post/38f64154/</loc>
     
     <lastmod>2021-06-05</lastmod>
@@ -107,6 +72,13 @@
   </url>
   
   <url>
+    <loc>https://tazyu.xyz/post/dc4c1419/</loc>
+    
+    <lastmod>2021-06-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tazyu.xyz/post/f8915431/</loc>
     
     <lastmod>2021-06-05</lastmod>
@@ -115,6 +87,13 @@
   
   <url>
     <loc>https://tazyu.xyz/post/8efd8d8a/</loc>
+    
+    <lastmod>2021-06-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tazyu.xyz/manifest.json</loc>
     
     <lastmod>2021-06-05</lastmod>
     
@@ -163,7 +142,35 @@
   </url>
   
   <url>
-    <loc>https://tazyu.xyz/img/siteicon/favicon_package_v0.16_2/README.html</loc>
+    <loc>https://tazyu.xyz/link/index.html</loc>
+    
+    <lastmod>2021-06-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tazyu.xyz/tags/index.html</loc>
+    
+    <lastmod>2021-06-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tazyu.xyz/img/siteicon/README.html</loc>
+    
+    <lastmod>2021-06-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tazyu.xyz/img/siteicon/manifest.json</loc>
+    
+    <lastmod>2021-06-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tazyu.xyz/post/b580d7ee/</loc>
     
     <lastmod>2021-06-05</lastmod>
     
